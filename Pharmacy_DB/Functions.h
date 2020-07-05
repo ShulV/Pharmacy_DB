@@ -5,6 +5,17 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+/*
+FILE* file;//основной файл
+FILE* file2;//вспомогательный файл
+int countData = 0;//текущее кол-во лекарств
+char fileName[] = "medicines.txt"; //основной файл
+char fileName2[] = "rewrite.txt"; //для переписывания при редактировании, удалении
+*/
+
+
+
+int get_count_data(char* fileName_);
 /* Прототипы функций конвертирования */
 std::string& Convert_String_to_string(String^ s, std::string& os);//Конвертируем System::string ^ в std::string
 std::string& Convert_String_to_string(String^ s);//Конвертируем std::string в System::string^

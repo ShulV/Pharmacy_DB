@@ -1,5 +1,28 @@
 #include "Functions.h"
 
+/*
+int get_count_data(char* fileName_) {
+	file = fopen(fileName_, "a");//Создание файла на случай, если он не создан
+fclose(file);
+file = fopen(fileName_, "r+");//чтение кол-ва записей или запись нуля при их отсутствии
+if (file == NULL)
+MessageBox::Show("Файл не открылся", "Ошибка");// Файл не открылся 
+rewind(file);
+fscanf(file, "%5d", &countData);
+if (countData == NULL) fprintf(file, "%5d\n", countData); //записываем 0 (кол-во записей) в начало
+else {
+	rewind(file);
+	fscanf(file, "%5d", &countData);
+}
+fclose(file);
+
+MessageBox::Show("f", "Предупреждение ");
+return countData;
+}
+*/
+
+
+/////////////////////////////////////////////////////////////////////////////////////
 /*Реализация функций*/
 /*Конвертируем System::string ^ в std::string*/
 std::string& Convert_String_to_string(String^ s, std::string& os) {
