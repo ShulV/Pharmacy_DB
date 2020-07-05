@@ -34,6 +34,11 @@ namespace PharmacyDB {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ âûõîäToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ âûõîäÈçÏğîãğàììûToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ âåğíóòüñÿÍàçàäToolStripMenuItem;
+	protected:
 
 	private:
 		/// <summary>
@@ -48,12 +53,64 @@ namespace PharmacyDB {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"UserInterface";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->âûõîäÈçÏğîãğàììûToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->âåğíóòüñÿÍàçàäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
+			this->SuspendLayout();
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(282, 28);
+			this->menuStrip1->TabIndex = 0;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// âûõîäToolStripMenuItem
+			// 
+			this->âûõîäToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->âûõîäÈçÏğîãğàììûToolStripMenuItem,
+					this->âåğíóòüñÿÍàçàäToolStripMenuItem
+			});
+			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(67, 24);
+			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
+			// 
+			// âûõîäÈçÏğîãğàììûToolStripMenuItem
+			// 
+			this->âûõîäÈçÏğîãğàììûToolStripMenuItem->Name = L"âûõîäÈçÏğîãğàììûToolStripMenuItem";
+			this->âûõîäÈçÏğîãğàììûToolStripMenuItem->Size = System::Drawing::Size(243, 26);
+			this->âûõîäÈçÏğîãğàììûToolStripMenuItem->Text = L"Âûéòè èç ïğîãğàììû";
+			this->âûõîäÈçÏğîãğàììûToolStripMenuItem->Click += gcnew System::EventHandler(this, &UserInterface::âûõîäÈçÏğîãğàììûToolStripMenuItem_Click);
+			// 
+			// âåğíóòüñÿÍàçàäToolStripMenuItem
+			// 
+			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Name = L"âåğíóòüñÿÍàçàäToolStripMenuItem";
+			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(243, 26);
+			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Text = L"Âåğíóòüñÿ íàçàä";
+			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Click += gcnew System::EventHandler(this, &UserInterface::âåğíóòüñÿÍàçàäToolStripMenuItem_Click);
+			// 
+			// UserInterface
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(282, 253);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
+			this->Name = L"UserInterface";
+			this->Text = L"UserInterface";
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
 		}
 #pragma endregion
+	private: System::Void âûõîäÈçÏğîãğàììûToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void âåğíóòüñÿÍàçàäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 }
