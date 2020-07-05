@@ -120,12 +120,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdminInterface.cpp" />
     <ClCompile Include="Functions.cpp" />
+    <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdminInterface.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="Login.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MainForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
