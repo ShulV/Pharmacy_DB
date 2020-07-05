@@ -64,6 +64,7 @@ void PharmacyDB::AdminInterface::Show()
     char fileName[] = "medicines.txt"; //основной файл
     countData = get_count_data(fileName);
     MessageBox::Show(Convert::ToString(countData),"window");
+    show_meds(countData);
 }
 
 System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e)

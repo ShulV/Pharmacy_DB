@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <string>
 
+
+
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -16,7 +18,8 @@ char fileName2[] = "rewrite.txt"; //для переписывания при редактировании, удален
 
 
 
-int get_count_data(char* fileName_);
+int get_count_data(char* fileName_); // ФУНКЦИЯ ПОЛУЧЕНИЯ КОЛ-ВА ЗАПИСЕЙ
+int show_meds(int _countData); // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
 /* Прототипы функций конвертирования */
 std::string& Convert_String_to_string(String^ s, std::string& os);//Конвертируем System::string ^ в std::string
 std::string& Convert_String_to_string(String^ s);//Конвертируем std::string в System::string^
