@@ -1,5 +1,5 @@
 #include "Functions.h"
-
+#include "AdminInterface.h"
 
 
 
@@ -50,12 +50,15 @@ int show_meds(int _countData) { // ÔÓÍÊÖÈß ÂÛÂÎÄÀ ÂÑÅÕ ËÅÊÀĞÑÒÂ
 	else {
 		std::string line;
 		std::ifstream in(fileName); // îêğûâàåì ôàéë äëÿ ÷òåíèÿ
+		int cell_num=0;
 		if (in.is_open())
 		{
 			getline(in, line);
-			MessageBox::Show(Convert_string_to_String(line), "ÊÎË_ÂÎ");
+			//MessageBox::Show(Convert_string_to_String(line), "ÊÎË_ÂÎ");
 			while (getline(in, line, ' '))
 			{
+				cell_num++;
+				//dataGridViewAdmin->
 				try{
 					std::cout << line << std::endl;
 					MessageBox::Show(Convert_string_to_String(line), "ÄÀÍÍÛÅ");

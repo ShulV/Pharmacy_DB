@@ -69,7 +69,7 @@ namespace PharmacyDB {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(974, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1261, 28);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -104,14 +104,14 @@ namespace PharmacyDB {
 			this->dataGridViewAdmin->Name = L"dataGridViewAdmin";
 			this->dataGridViewAdmin->RowHeadersWidth = 51;
 			this->dataGridViewAdmin->RowTemplate->Height = 24;
-			this->dataGridViewAdmin->Size = System::Drawing::Size(950, 409);
+			this->dataGridViewAdmin->Size = System::Drawing::Size(1224, 409);
 			this->dataGridViewAdmin->TabIndex = 1;
 			// 
 			// AdminInterface
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(974, 553);
+			this->ClientSize = System::Drawing::Size(1261, 553);
 			this->Controls->Add(this->dataGridViewAdmin);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
@@ -130,6 +130,7 @@ namespace PharmacyDB {
 	private: System::Void âåğíóòüñÿÍàçàäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: void Header();
 	private: void Show();
+		   private: void Show_meds(int _countData);
 private: System::Void AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e);
 };
 }
