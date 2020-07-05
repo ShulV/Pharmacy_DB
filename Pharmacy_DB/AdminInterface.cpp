@@ -59,12 +59,16 @@ void PharmacyDB::AdminInterface::Header()
 
 void PharmacyDB::AdminInterface::Show()
 {
-    throw gcnew System::NotImplementedException();
+    FILE* file;//основной файл
+    int countData = 0;//текущее кол-во лекарств
+    char fileName[] = "medicines.txt"; //основной файл
+    countData = get_count_data(fileName);
+    MessageBox::Show(Convert::ToString(countData),"window");
 }
 
 System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e)
 {
-   // countData = get_count_data(fileName);
-    //MessageBox::Show(Convert::ToString(countData),"window");
+    Header();
+    Show();
     return System::Void();
 }

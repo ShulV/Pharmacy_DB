@@ -1,25 +1,26 @@
 #include "Functions.h"
 
-/*
+
 int get_count_data(char* fileName_) {
-	file = fopen(fileName_, "a");//Создание файла на случай, если он не создан
+FILE* file;//основной файл
+int countData_= 0;//текущее кол-во лекарств
+//MessageBox::Show(Convert::ToString(countData_), "1");
+file = fopen(fileName_, "a");//Создание файла на случай, если он не создан
 fclose(file);
 file = fopen(fileName_, "r+");//чтение кол-ва записей или запись нуля при их отсутствии
-if (file == NULL)
-MessageBox::Show("Файл не открылся", "Ошибка");// Файл не открылся 
-rewind(file);
-fscanf(file, "%5d", &countData);
-if (countData == NULL) fprintf(file, "%5d\n", countData); //записываем 0 (кол-во записей) в начало
-else {
+	if (file == NULL)
+		MessageBox::Show("Файл не открылся", "Ошибка");// Файл не открылся 
 	rewind(file);
-	fscanf(file, "%5d", &countData);
-}
+	fscanf(file, "%5d", &countData_);
+	if (countData_ == NULL) fprintf(file, "%5d\n", 0); //записываем 0 (кол-во записей) в начало
+	else {
+		rewind(file);
+		fscanf(file, "%5d", &countData_);
+	}
 fclose(file);
-
-MessageBox::Show("f", "Предупреждение ");
-return countData;
+return countData_;
 }
-*/
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////
