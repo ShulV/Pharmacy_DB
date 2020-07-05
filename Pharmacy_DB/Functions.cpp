@@ -34,11 +34,12 @@ int show_meds(int _countData) { // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
 #define LENGTH_DATE 10 //длина даты (2000.09.14)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 	/*med - структура для добавления записи, редактирования записи new_med - для записи данных при редактировании*/
+	std::string name;
 	struct {
 		int id; //ключ
-		std::string name; //название
-		char country[MAX_LENGTH]; //страна-производитель
-		char date[MAX_LENGTH]; //дата производства
+		std::string name, //название
+		country, //страна-производитель
+		date; //дата производства
 		int pharmacy_number[MAX_PHARMACIES]; //номера аптек
 		int price; //максимальная цена
 	} med, new_med;
@@ -47,26 +48,49 @@ int show_meds(int _countData) { // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
 		MessageBox::Show("Записей в файле нет", "Предупреждение");
 	}
 	else {
-		file = fopen(fileName, "r+");
+		std::string line;
+		std::ifstream in(fileName); // окрываем файл для чтения
+		if (in.is_open())
+		{
+			getline(in, line);
+			MessageBox::Show(Convert_string_to_String(line), "КОЛ_ВО");
+			while (getline(in, line, ' '))
+			{
+				try{
+					std::cout << line << std::endl;
+					MessageBox::Show(Convert_string_to_String(line), "ДАННЫЕ");
+				}
+				catch (int exception){
+					in.close();
+				}
+
+			}
+		}
+		else
+			MessageBox::Show("Файл не открылся", "Ошибка");//Файл не открылся 
+		in.close();     // закрываем файл
+		/*file = fopen(fileName, "r+");
 		if (file == NULL)
-			MessageBox::Show("Файл не открылся", "Ошибка");/* Файл не открылся */
+			MessageBox::Show("Файл не открылся", "Ошибка");//Файл не открылся 
 		fseek(file, 0L, SEEK_SET);
 		fscanf(file, "%5d", &_countData);
 		DataGridView^ dataGridView1 = gcnew DataGridView();
-
 		for (int i = 0; i < _countData; i++) {
-			//dataGridView1->RowContextMenuStripChanged[i]->Value = Convert::ToString(med.id);
-			fscanf(file, "%5d", &med.id);
-			MessageBox::Show(Convert::ToString(med.id), Convert::ToString(i));
-			fscanf(file, "%25s", &med.name);
-			MessageBox::Show(Convert_string_to_String(med.name), Convert::ToString(i));
+fscanf(file, "%5d", &med.id);
+			//создаём поток для чтения
+			
+			fscanf(file, "%25s", &name);
+			printf("\n\n\n\n\n\n\n\n\n%d\n\n\n\n\n\n\n\n\n\n\n\n", name);
 			fscanf(file, "%25s", &med.country);
 			fscanf(file, "%25s", &med.date);
+			MessageBox::Show(Convert::ToString(med.id) + " " + Convert_string_to_String(name) + " " + Convert_string_to_String(med.country) + " " + Convert_string_to_String(med.date), Convert::ToString(i));
 			for (int j = 0; j < MAX_PHARMACIES; j++)
 				fscanf(file, "%5d", &med.pharmacy_number[j]);
 			fscanf(file, "%10d\n", &med.price);
-		}
-		fclose(file);
+
+			
+		}*/
+		//fclose(file);
 	}
 	return 0;
 }

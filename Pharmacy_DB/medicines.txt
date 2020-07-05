@@ -1,6 +1,4 @@
-    5
-    0                  ORBIMAX                      USA               2001.11.11    4   21    0    0    0       990
-    1                  BARSPIN                Australia               2010.12.23   23    2    1   23    0      4444
-    2                    GHOST                    Japan               2012.11.23   12   42   24    1   24      4244
-    3         BINT_ELASTICHNIY                   Russia               2012.12.30   14    3    1    0    0       199
-    4         Perekis_vodoroda                   Russia               2020.12.30    1   99   12    5    0       120
+2
+0 ORBIMAX USA 2001.11.11 4 21 0 0 0 990
+1 BARSPIN Australia 2010.12.23 23 2 1 23 0 4444
+

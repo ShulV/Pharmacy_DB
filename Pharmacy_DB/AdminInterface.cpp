@@ -63,7 +63,7 @@ void PharmacyDB::AdminInterface::Show()
     int countData = 0;//текущее кол-во лекарств
     char fileName[] = "medicines.txt"; //основной файл
     countData = get_count_data(fileName);
-    MessageBox::Show(Convert::ToString(countData),"window");
+   //MessageBox::Show(Convert::ToString(countData),"window");
     show_meds(countData);
 }
 
