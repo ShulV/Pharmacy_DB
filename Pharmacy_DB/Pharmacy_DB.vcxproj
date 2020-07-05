@@ -130,7 +130,6 @@
     <ClInclude Include="AdminInterface.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Constants.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Login.h">
       <FileType>CppForm</FileType>
