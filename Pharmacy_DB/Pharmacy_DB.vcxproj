@@ -146,6 +146,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddForm.resx">
+      <DependentUpon>AddForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminInterface.resx">
       <DependentUpon>AdminInterface.h</DependentUpon>
     </EmbeddedResource>
