@@ -1,4 +1,5 @@
 #include "AddForm.h"
+#include "AdminInterface.h"
 #include "Functions.h"
 #include <ctype.h>
 System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System::EventArgs^ e)
@@ -31,6 +32,10 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
     
     save_meds_line_in_adititional_file(id, date, name, country, pharm_numbers, price);
     add_line_from_adititional_file_to_main_file(AddFileName, fileName);
-    MessageBox::Show("Ошибок при вводе не найдено ", "П");
+
+    AdminInterface^ adminForm = gcnew AdminInterface();//создание формы
+    this->Hide();//скрытие текующей формы
+    adminForm->Hide();//скрытие главной формы
+    adminForm->Show();//открытие главной формы (чтобы инфа обновилась)
     return System::Void();
 }

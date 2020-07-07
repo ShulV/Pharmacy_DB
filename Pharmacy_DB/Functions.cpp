@@ -19,11 +19,11 @@ file = fopen(fileName_, "r+");//чтение кол-ва записей или запись нуля при их отс
 	if (file == NULL)
 		MessageBox::Show("Файл не открылся", "Ошибка");// Файл не открылся 
 	rewind(file);
-	fscanf(file, "%5d", &countData_);
-	if (countData_ == NULL) fprintf(file, "%5d\n", 0); //записываем 0 (кол-во записей) в начало
+	fscanf(file, "%d", &countData_);
+	if (countData_ == NULL) fprintf(file, "%d\n", 0); //записываем 0 (кол-во записей) в начало
 	else {
 		rewind(file);
-		fscanf(file, "%5d", &countData_);
+		fscanf(file, "%d", &countData_);
 	}
 fclose(file);
 return countData_;
@@ -98,6 +98,7 @@ fscanf(file, "%5d", &med.id);
 	return 0;
 }
 int save_meds_line_in_adititional_file(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price) {//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ В ФАЙЛ
+	// TODO сделать проверки и защиту ввода!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	std::string fileName = "AddRecord.txt";
 	//создать поток для записи в файл
 	std::ofstream record(fileName);
@@ -125,7 +126,7 @@ int save_meds_line_in_adititional_file(std::string id, std::string name, std::st
 
 int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNameTo)
 {
-	
+	//чтение новой записи
 	std::string fileName = fileNameFrom;
 	//создать поток для чтения из файла
 	std::ifstream fileRecord(fileName, std::ifstream::in);
@@ -133,7 +134,6 @@ int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNa
 	if (fileRecord) {
 		
 		getline(fileRecord, line);
-		//MessageBox::Show(Convert_string_to_String(line), "line");
 	}
 	else {
 		MessageBox::Show("Ошибка открытия файла", "Ошибка");
@@ -142,18 +142,33 @@ int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNa
 	
 	fileRecord.close();
 
-
+	int CountData = get_count_data(fileNameTo);
+	//запись новой записи в конец
 	std::ofstream file (fileNameTo, std::ios::app);
 	if (file)
-		file << line;
+	{
+		file << line << std::endl;
+	}	
 	else
 	{
 		MessageBox::Show("Ошибка открытия файла", "Ошибка");
 		return 1;
 	}
 	file.close();
+	std::ofstream file_(fileNameTo, std::ios_base::in | std::ios_base::out);
+	if (file_)
+	{
+		file_.seekp(0, std::ios::beg);
+		file_ << ++CountData << std::endl;
+	}
+	else
+	{
+		MessageBox::Show("Ошибка открытия файла", "Ошибка");
+		return 1;
+	}
+	file_.close();
 	MessageBox::Show("Данные добавлены", "Успешно");
-	
+
 	return 0;
 }
 
