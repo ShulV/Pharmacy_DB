@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AddForm.cpp" />
     <ClCompile Include="AdminInterface.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Login.cpp" />
@@ -127,6 +128,9 @@
     <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="AdminInterface.h">
       <FileType>CppForm</FileType>
     </ClInclude>

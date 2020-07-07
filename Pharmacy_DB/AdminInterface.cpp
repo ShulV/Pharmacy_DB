@@ -1,6 +1,7 @@
 #include "AdminInterface.h"
 #include "MainForm.h"
 #include "Functions.h"
+#include "AddForm.h"
 
 System::Void PharmacyDB::AdminInterface::выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -161,3 +162,18 @@ System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ se
     Show_meds(countData);
     return System::Void();
 }
+
+System::Void PharmacyDB::AdminInterface::добавитьƒанныеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    return System::Void();
+}
+
+System::Void PharmacyDB::AdminInterface::buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    AddForm^ addForm = gcnew AddForm();//создание формы
+    //this->Hide();//скрытие текующей формы
+    addForm->Show();//открытие главной формы
+    return System::Void();
+}
+
+

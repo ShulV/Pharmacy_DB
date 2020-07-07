@@ -22,7 +22,15 @@ namespace PharmacyDB {
 			//TODO: äîáàâüòå êîä êîíñòğóêòîğà
 			//
 		}
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	public:
+	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::Button^ buttonAddLine;
 
+
+
+	private:
+		DataGridView^ DataGridViewAdmin = gcnew DataGridView();
 	protected:
 		/// <summary>
 		/// Îñâîáîäèòü âñå èñïîëüçóåìûå ğåñóğñû.
@@ -39,6 +47,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::ToolStripMenuItem^ âûéòèÈçÏğîãğàììûToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ âåğíóòüñÿÍàçàäToolStripMenuItem;
 	private: System::Windows::Forms::DataGridView^ dataGridViewAdmin;
+	private: System::Windows::Forms::ToolStripMenuItem^ ğåäàêòèğîâàòüÄàííûåToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ äîáàâèòüÄàííûåToolStripMenuItem;
 	protected:
 
 	private:
@@ -58,15 +68,25 @@ namespace PharmacyDB {
 			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->âûéòèÈçÏğîãğàììûToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->äîáàâèòüÄàííûåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dataGridViewAdmin = (gcnew System::Windows::Forms::DataGridView());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->buttonAddLine = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->BeginInit();
+			this->groupBox1->SuspendLayout();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->âûõîäToolStripMenuItem,
+					this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem, this->äîáàâèòüÄàííûåToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1261, 28);
@@ -97,22 +117,70 @@ namespace PharmacyDB {
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Text = L"Âåğíóòüñÿ íàçàä";
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Click += gcnew System::EventHandler(this, &AdminInterface::âåğíóòüñÿÍàçàäToolStripMenuItem_Click);
 			// 
+			// ğåäàêòèğîâàòüÄàííûåToolStripMenuItem
+			// 
+			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem->Name = L"ğåäàêòèğîâàòüÄàííûåToolStripMenuItem";
+			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem->Size = System::Drawing::Size(182, 24);
+			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem->Text = L"Ğåäàêòèğîâàòü äàííûå";
+			// 
+			// äîáàâèòüÄàííûåToolStripMenuItem
+			// 
+			this->äîáàâèòüÄàííûåToolStripMenuItem->Name = L"äîáàâèòüÄàííûåToolStripMenuItem";
+			this->äîáàâèòüÄàííûåToolStripMenuItem->Size = System::Drawing::Size(147, 24);
+			this->äîáàâèòüÄàííûåToolStripMenuItem->Text = L"Äîáàâèòü äàííûå";
+			this->äîáàâèòüÄàííûåToolStripMenuItem->Click += gcnew System::EventHandler(this, &AdminInterface::äîáàâèòüÄàííûåToolStripMenuItem_Click);
+			// 
 			// dataGridViewAdmin
 			// 
+			this->dataGridViewAdmin->AllowUserToAddRows = false;
+			this->dataGridViewAdmin->AllowUserToDeleteRows = false;
 			this->dataGridViewAdmin->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewAdmin->Location = System::Drawing::Point(12, 43);
+			this->dataGridViewAdmin->Location = System::Drawing::Point(24, 40);
 			this->dataGridViewAdmin->Name = L"dataGridViewAdmin";
+			this->dataGridViewAdmin->ReadOnly = true;
 			this->dataGridViewAdmin->RowHeadersWidth = 51;
 			this->dataGridViewAdmin->RowTemplate->Height = 24;
-			this->dataGridViewAdmin->Size = System::Drawing::Size(1224, 409);
+			this->dataGridViewAdmin->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
+			this->dataGridViewAdmin->Size = System::Drawing::Size(949, 409);
 			this->dataGridViewAdmin->TabIndex = 1;
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->dataGridViewAdmin);
+			this->groupBox1->Location = System::Drawing::Point(12, 31);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(1001, 510);
+			this->groupBox1->TabIndex = 2;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Äàííûå";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->buttonAddLine);
+			this->groupBox2->Location = System::Drawing::Point(1019, 31);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(232, 510);
+			this->groupBox2->TabIndex = 3;
+			this->groupBox2->TabStop = false;
+			this->groupBox2->Text = L"Ğàáîòà ñ äàííûìè";
+			// 
+			// buttonAddLine
+			// 
+			this->buttonAddLine->Location = System::Drawing::Point(21, 40);
+			this->buttonAddLine->Name = L"buttonAddLine";
+			this->buttonAddLine->Size = System::Drawing::Size(187, 29);
+			this->buttonAddLine->TabIndex = 0;
+			this->buttonAddLine->Text = L"äîáàâèòü çàïèñü";
+			this->buttonAddLine->UseVisualStyleBackColor = true;
+			this->buttonAddLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonAddLine_Click);
 			// 
 			// AdminInterface
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1261, 553);
-			this->Controls->Add(this->dataGridViewAdmin);
+			this->Controls->Add(this->groupBox2);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"AdminInterface";
@@ -121,6 +189,8 @@ namespace PharmacyDB {
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox2->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -132,5 +202,7 @@ namespace PharmacyDB {
 	private: void Show();
 		   private: void Show_meds(int _countData);
 private: System::Void AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e);
+private: System::Void äîáàâèòüÄàííûåToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
