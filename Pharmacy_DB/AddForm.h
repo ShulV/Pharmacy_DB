@@ -54,6 +54,7 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxNumber4;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxNumber5;
+	private: System::Windows::Forms::Button^ buttonAdd;
 
 	protected:
 
@@ -89,6 +90,7 @@ namespace PharmacyDB {
 			this->maskedTextBoxNumber4 = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->maskedTextBoxNumber5 = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->buttonAdd = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// maskedTextBoxName
@@ -255,11 +257,22 @@ namespace PharmacyDB {
 			this->maskedTextBoxNumber5->Size = System::Drawing::Size(33, 22);
 			this->maskedTextBoxNumber5->TabIndex = 20;
 			// 
+			// buttonAdd
+			// 
+			this->buttonAdd->Location = System::Drawing::Point(316, 309);
+			this->buttonAdd->Name = L"buttonAdd";
+			this->buttonAdd->Size = System::Drawing::Size(153, 28);
+			this->buttonAdd->TabIndex = 22;
+			this->buttonAdd->Text = L"Добавить запись";
+			this->buttonAdd->UseVisualStyleBackColor = true;
+			this->buttonAdd->Click += gcnew System::EventHandler(this, &AddForm::buttonAdd_Click);
+			// 
 			// AddForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(505, 363);
+			this->Controls->Add(this->buttonAdd);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->maskedTextBoxNumber5);
 			this->Controls->Add(this->label10);
@@ -286,5 +299,6 @@ namespace PharmacyDB {
 
 		}
 #pragma endregion
-	};
+	private: System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e);
+};
 }

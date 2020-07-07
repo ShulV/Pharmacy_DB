@@ -2,7 +2,13 @@
 #include "AdminInterface.h"
 
 
-
+#define MAX_MEDICAMENTS 100 //максимальное количество лекарств
+#define MAX_LENGTH 50 //максимальная длина текста
+#define MAX_PHARMACIES 5 //максимальное кол-во аптек, имеющих в наличии лекраство
+#define NUM_KEYS_TABLE 6 //кол-во ключей таблицы (заголовков столбцов)
+#define NUM_SORT_FIELDS 5 //кол-во сортируемых столбцов
+#define NUM_EDIT_FIELDS 5 //кол-во редактируемых столбцов
+#define LENGTH_DATE 10 //длина даты (2000.09.14)
 int get_count_data(char* fileName_) { // ФУНКЦИЯ ПОЛУЧЕНИЯ КОЛ-ВА ЗАПИСЕЙ
 FILE* file;//основной файл
 int countData_= 0;//текущее кол-во лекарств
@@ -25,13 +31,7 @@ return countData_;
 int show_meds(int _countData) { // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
 	char fileName[] = "medicines.txt"; //основной файл
 	FILE* file;//основной файл
-#define MAX_MEDICAMENTS 100 //максимальное количество лекарств
-#define MAX_LENGTH 50 //максимальная длина текста
-#define MAX_PHARMACIES 5 //максимальное кол-во аптек, имеющих в наличии лекраство
-#define NUM_KEYS_TABLE 6 //кол-во ключей таблицы (заголовков столбцов)
-#define NUM_SORT_FIELDS 5 //кол-во сортируемых столбцов
-#define NUM_EDIT_FIELDS 5 //кол-во редактируемых столбцов
-#define LENGTH_DATE 10 //длина даты (2000.09.14)
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 	/*med - структура для добавления записи, редактирования записи new_med - для записи данных при редактировании*/
 	std::string name;
@@ -97,7 +97,31 @@ fscanf(file, "%5d", &med.id);
 	}
 	return 0;
 }
+int save_meds_line(int id, std::string name, std::string country, std::string date, int pharmacy_number[MAX_PHARMACIES], int price) {
+	std::string fileName = "AddRecord.txt";
+	//создать поток для записи в файл
+	std::ofstream record(fileName);
 
+	if (record) {
+		record << id << ";";
+		record << name << ";";
+		record << country << ";";
+		record << date << ";";
+		record << pharmacy_number[0] << ";";
+		record << pharmacy_number[1] << ";";
+		record << pharmacy_number[2] << ";";
+		record << pharmacy_number[3] << ";";
+		record << pharmacy_number[4] << ";";
+		record << price << ";";
+		record << std::endl;
+	}
+	else
+		MessageBox::Show("Ошибка открытия файла", "Ошибка");
+	MessageBox::Show("Данные сохранены в файл", "Успешно");
+
+	record.close();
+	return 0;
+}
 
 /////////////////////////////////////////////////////////////////////////////////////
 /*Реализация функций*/

@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 
+#define MAX_PHARMACIES 5 //максимальное кол-во аптек, имеющих в наличии лекраство
+
 using namespace System;
 using namespace System::Windows::Forms;
 
@@ -20,6 +22,7 @@ char fileName2[] = "rewrite.txt"; //для переписывания при редактировании, удален
 
 int get_count_data(char* fileName_); // ФУНКЦИЯ ПОЛУЧЕНИЯ КОЛ-ВА ЗАПИСЕЙ
 int show_meds(int _countData); // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
+int save_meds_line(int id, std::string name, std::string country, std::string date, int pharmacy_number[MAX_PHARMACIES], int price);
 /* Прототипы функций конвертирования */
 std::string& Convert_String_to_string(String^ s, std::string& os);//Конвертируем System::string ^ в std::string
 std::string& Convert_String_to_string(String^ s);//Конвертируем std::string в System::string^
