@@ -97,7 +97,7 @@ fscanf(file, "%5d", &med.id);
 	}
 	return 0;
 }
-int save_meds_line(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price) {//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ
+int save_meds_line_in_adititional_file(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price) {//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ В ФАЙЛ
 	std::string fileName = "AddRecord.txt";
 	//создать поток для записи в файл
 	std::ofstream record(fileName);
@@ -120,6 +120,40 @@ int save_meds_line(std::string id, std::string name, std::string country, std::s
 	MessageBox::Show("Данные сохранены в файл", "Успешно");
 
 	record.close();
+	return 0;
+}
+
+int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNameTo)
+{
+	
+	std::string fileName = fileNameFrom;
+	//создать поток для чтения из файла
+	std::ifstream fileRecord(fileName, std::ifstream::in);
+	std::string line;
+	if (fileRecord) {
+		
+		getline(fileRecord, line);
+		//MessageBox::Show(Convert_string_to_String(line), "line");
+	}
+	else {
+		MessageBox::Show("Ошибка открытия файла", "Ошибка");
+		return 1;
+	}
+	
+	fileRecord.close();
+
+
+	std::ofstream file (fileNameTo, std::ios::app);
+	if (file)
+		file << line;
+	else
+	{
+		MessageBox::Show("Ошибка открытия файла", "Ошибка");
+		return 1;
+	}
+	file.close();
+	MessageBox::Show("Данные добавлены", "Успешно");
+	
 	return 0;
 }
 

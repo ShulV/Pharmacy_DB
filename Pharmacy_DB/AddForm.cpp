@@ -4,6 +4,7 @@
 System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System::EventArgs^ e)
 {
     char fileName[] = "medicines.txt"; //основной файл
+    char AddFileName[] = "AddRecord.txt"; //файл добавленной записи
 
     std::string id, name, date, country, pharm_numbers[MAX_PHARMACIES], price;
     String^ Id = Convert::ToString(get_count_data(fileName));
@@ -28,8 +29,8 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
     Convert_String_to_string(Pharm_numbers5, pharm_numbers[4]);
     Convert_String_to_string(Price, price);
     
-    save_meds_line(id, date, name, country, pharm_numbers, price);
-
+    save_meds_line_in_adititional_file(id, date, name, country, pharm_numbers, price);
+    add_line_from_adititional_file_to_main_file(AddFileName, fileName);
     MessageBox::Show("Ошибок при вводе не найдено ", "П");
     return System::Void();
 }

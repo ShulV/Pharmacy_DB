@@ -22,7 +22,8 @@ char fileName2[] = "rewrite.txt"; //для переписывания при редактировании, удален
 
 int get_count_data(char* fileName_); // ФУНКЦИЯ ПОЛУЧЕНИЯ КОЛ-ВА ЗАПИСЕЙ
 int show_meds(int _countData); // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
-int save_meds_line(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price);//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ
+int save_meds_line_in_adititional_file(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price);//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ В ФАЙЛ
+int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNameTo);
 
 /* Прототипы функций конвертирования */
 std::string& Convert_String_to_string(String^ s, std::string& os);//Конвертируем System::string ^ в std::string
