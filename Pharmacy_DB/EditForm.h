@@ -321,6 +321,7 @@ namespace PharmacyDB {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"EditForm";
 			this->Text = L"EditForm";
+			this->Shown += gcnew System::EventHandler(this, &EditForm::EditForm_Shown);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
@@ -330,5 +331,6 @@ namespace PharmacyDB {
 #pragma endregion
 	private: System::Void buttonEdit_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void Ì‡Á‡‰ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void EditForm_Shown(System::Object^ sender, System::EventArgs^ e);
 };
 }

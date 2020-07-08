@@ -13,3 +13,8 @@ System::Void PharmacyDB::EditForm::назадToolStripMenuItem_Click(System::Object^ 
     adminForm->Show();//открытие главной формы
     return System::Void();
 }
+
+System::Void PharmacyDB::EditForm::EditForm_Shown(System::Object^ sender, System::EventArgs^ e)
+{
+    return System::Void();
+}

@@ -1,1 +1,1 @@
-4;Perekis_vodoroda;Russia;2020.12.30;1;99;12;5;0;120;
+1;BARSPIN;Australia;2010.12.23;23;2;1;23;0;444;
