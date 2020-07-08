@@ -26,6 +26,7 @@ namespace PharmacyDB {
 	public:
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Button^ buttonAddLine;
+	private: System::Windows::Forms::Button^ buttonEditLine;
 
 
 
@@ -74,6 +75,7 @@ namespace PharmacyDB {
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->buttonAddLine = (gcnew System::Windows::Forms::Button());
+			this->buttonEditLine = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -156,6 +158,7 @@ namespace PharmacyDB {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->buttonEditLine);
 			this->groupBox2->Controls->Add(this->buttonAddLine);
 			this->groupBox2->Location = System::Drawing::Point(1019, 31);
 			this->groupBox2->Name = L"groupBox2";
@@ -173,6 +176,16 @@ namespace PharmacyDB {
 			this->buttonAddLine->Text = L"добавить запись";
 			this->buttonAddLine->UseVisualStyleBackColor = true;
 			this->buttonAddLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonAddLine_Click);
+			// 
+			// buttonEditLine
+			// 
+			this->buttonEditLine->Location = System::Drawing::Point(21, 176);
+			this->buttonEditLine->Name = L"buttonEditLine";
+			this->buttonEditLine->Size = System::Drawing::Size(187, 29);
+			this->buttonEditLine->TabIndex = 1;
+			this->buttonEditLine->Text = L"редактировать запись";
+			this->buttonEditLine->UseVisualStyleBackColor = true;
+			this->buttonEditLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonEditLine_Click);
 			// 
 			// AdminInterface
 			// 
@@ -204,5 +217,6 @@ namespace PharmacyDB {
 private: System::Void AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e);
 private: System::Void добавитьƒанныеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonEditLine_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

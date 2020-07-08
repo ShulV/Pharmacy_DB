@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="AddForm.cpp" />
     <ClCompile Include="AdminInterface.cpp" />
+    <ClCompile Include="EditForm.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainForm.cpp" />
@@ -134,6 +135,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="AdminInterface.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="EditForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Functions.h" />
