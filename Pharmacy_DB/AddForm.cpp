@@ -50,8 +50,8 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
         MessageBox::Show("Цена должна быть не отрицательным числом!\nИсправьте данные и повторите действие.", "Ошибка");
         return System::Void();
     }
-
-    save_meds_line_in_adititional_file(id, date, name, country, pharm_numbers, price);
+    std::string add_fileName = "AddRecord.txt";
+    save_meds_line_in_adititional_file(id, date, name, country, pharm_numbers, price, add_fileName);
     add_line_from_adititional_file_to_main_file(AddFileName, fileName);
 
     AdminInterface^ adminForm = gcnew AdminInterface();//создание формы

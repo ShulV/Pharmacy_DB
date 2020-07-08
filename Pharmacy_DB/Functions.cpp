@@ -97,9 +97,7 @@ fscanf(file, "%5d", &med.id);
 	}
 	return 0;
 }
-int save_meds_line_in_adititional_file(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price) {//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ В ФАЙЛ
-	// TODO сделать проверки и защиту ввода!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	std::string fileName = "AddRecord.txt";
+int save_meds_line_in_adititional_file(std::string id, std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price, std::string fileName) {//ФУНКЦИЯ СОХРАНЕНИЯ ДАННЫХ ОДНОЙ ЗАПИСИ В ФАЙЛ
 	//создать поток для записи в файл
 	std::ofstream record(fileName);
 

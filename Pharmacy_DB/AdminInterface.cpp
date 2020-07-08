@@ -161,7 +161,7 @@ System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ se
     Header();
     Show();
     Show_meds(countData);
-    int row_count = this->dataGridViewAdmin->Rows->Count - 1;
+    int row_count = this->dataGridViewAdmin->Rows->Count - 2;
     AdminInterface::numericUpDownRecordId->Maximum = row_count;
     return System::Void();
 }
@@ -181,6 +181,19 @@ System::Void PharmacyDB::AdminInterface::buttonAddLine_Click(System::Object^ sen
 
 System::Void PharmacyDB::AdminInterface::buttonEditLine_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    int number_row = Int32(AdminInterface::numericUpDownRecordId->Value);//номер ряда
+    String^ id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
+    String^ name = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[1]->Value);
+    String^ country = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[2]->Value);
+    String^ date = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[3]->Value);
+    String^ pharmacy_number1 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[4]->Value);
+    String^ pharmacy_number2 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[5]->Value);
+    String^ pharmacy_number3 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[6]->Value);
+    String^ pharmacy_number4 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[7]->Value);
+    String^ pharmacy_number5 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[8]->Value);
+    String^ price = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[9]->Value);
+    //MessageBox::Show(id+ name+ country+ date);
+    //std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price
     EditForm^ editForm = gcnew  EditForm();//создание формы
     this->Hide();//скрытие текующей формы
     editForm->Show();//открытие главной формы
