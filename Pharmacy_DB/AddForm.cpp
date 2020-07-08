@@ -30,6 +30,27 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
     Convert_String_to_string(Pharm_numbers5, pharm_numbers[4]);
     Convert_String_to_string(Price, price);
     
+    bool fields_is_empty = (id == "" || date == "" || name == "" || country == "" || pharm_numbers[0] == "" || pharm_numbers[1] == "" || pharm_numbers[2] == "" || pharm_numbers[3] == "" || pharm_numbers[4] == "" || price == "");
+    if (fields_is_empty) {
+        MessageBox::Show("Есть пустое поле!\nДобавьте данные и повторите действие.", "Ошибка");
+        return System::Void();
+    }
+    bool data_true = date_is_true(date);
+    if (!data_true) {
+        MessageBox::Show("Дата-производства не была введена (или была введена не полностью)\nИсправьте данные и повторите действие.", "Ошибка");
+        return System::Void();
+    }
+    bool pharms_true = is_positive_number(pharm_numbers[0]) && is_positive_number(pharm_numbers[1]) && is_positive_number(pharm_numbers[2]) && is_positive_number(pharm_numbers[3]) && is_positive_number(pharm_numbers[4]);
+    if (!pharms_true) {
+        MessageBox::Show("Номер аптеки должен быть не отрицательным числом!\nИсправьте данные и повторите действие.", "Ошибка");
+        return System::Void();
+    }
+    bool price_true = is_positive_number(price);
+    if (!price_true) {
+        MessageBox::Show("Цена должна быть не отрицательным числом!\nИсправьте данные и повторите действие.", "Ошибка");
+        return System::Void();
+    }
+
     save_meds_line_in_adititional_file(id, date, name, country, pharm_numbers, price);
     add_line_from_adititional_file_to_main_file(AddFileName, fileName);
 
@@ -37,5 +58,8 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
     this->Hide();//скрытие текующей формы
     adminForm->Hide();//скрытие главной формы
     adminForm->Show();//открытие главной формы (чтобы инфа обновилась)
+   
+
     return System::Void();
+   
 }

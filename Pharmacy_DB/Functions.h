@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #define MAX_PHARMACIES 5 //максимальное кол-во аптек, имеющих в наличии лекраство
 
@@ -32,3 +33,6 @@ String^ Convert_string_to_String(std::string& os, String^ s);//Конвертируем std:
 String^ Convert_string_to_String(std::string& os);//Конвертируем std::string в System::string^
 System::String^ Convert_char_to_String(char* ch);//Конвертируем char* в System::String^
 char* Convert_String_to_char(System::String^ string);//конвертируем System::String^ в char*
+
+bool is_positive_number(const std::string& s);//функция: является ли строка положительным числом или нулём
+bool date_is_true(const std::string& s);//функция: является ли дата верно введенной

@@ -227,3 +227,16 @@ char* Convert_String_to_char(String^ string) {
 	using namespace Runtime::InteropServices;
 	return (char*)(void*)Marshal::StringToHGlobalAnsi(string);
 }
+
+bool is_positive_number(const std::string& s)
+{
+	std::string::const_iterator it = s.begin();
+	while (it != s.end() && std::isdigit(*it) && *it >= 0) ++it;
+	return !s.empty() && it == s.end();
+}
+bool date_is_true(const std::string& s) {
+	if (s.length()!=10) return false;
+	std::string::const_iterator it = s.begin();
+	while (it != s.end() && (std::isdigit(*it) || *it == '.' || *it == ',')) ++it;
+	return !s.empty() && it == s.end();
+}

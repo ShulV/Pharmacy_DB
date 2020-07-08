@@ -171,7 +171,7 @@ System::Void PharmacyDB::AdminInterface::добавитьƒанныеToolStripMenuItem_Click(S
 System::Void PharmacyDB::AdminInterface::buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e)
 {
     AddForm^ addForm = gcnew AddForm();//создание формы
-    //this->Hide();//скрытие текующей формы
+    this->Hide();//скрытие текующей формы
     addForm->Show();//открытие главной формы
     return System::Void();
 }

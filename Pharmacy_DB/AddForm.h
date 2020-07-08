@@ -111,8 +111,9 @@ namespace PharmacyDB {
 			// 
 			// maskedTextBoxDate
 			// 
+			this->maskedTextBoxDate->BeepOnError = true;
 			this->maskedTextBoxDate->Location = System::Drawing::Point(28, 116);
-			this->maskedTextBoxDate->Mask = L"0000.00.00";
+			this->maskedTextBoxDate->Mask = L"0000/00/00";
 			this->maskedTextBoxDate->Name = L"maskedTextBoxDate";
 			this->maskedTextBoxDate->Size = System::Drawing::Size(200, 22);
 			this->maskedTextBoxDate->TabIndex = 3;
