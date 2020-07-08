@@ -181,19 +181,39 @@ System::Void PharmacyDB::AdminInterface::buttonAddLine_Click(System::Object^ sen
 
 System::Void PharmacyDB::AdminInterface::buttonEditLine_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    std::string edit_fileName = "EditRecord.txt";
+
     int number_row = Int32(AdminInterface::numericUpDownRecordId->Value);//номер ряда
-    String^ id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
-    String^ name = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[1]->Value);
-    String^ country = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[2]->Value);
-    String^ date = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[3]->Value);
-    String^ pharmacy_number1 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[4]->Value);
-    String^ pharmacy_number2 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[5]->Value);
-    String^ pharmacy_number3 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[6]->Value);
-    String^ pharmacy_number4 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[7]->Value);
-    String^ pharmacy_number5 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[8]->Value);
-    String^ price = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[9]->Value);
-    //MessageBox::Show(id+ name+ country+ date);
-    //std::string name, std::string country, std::string date, std::string pharmacy_number[MAX_PHARMACIES], std::string price
+    String^ Id = Convert::ToString(Convert::ToInt32(dataGridViewAdmin->CurrentRow->Cells[0]->Value));
+    String^ Name = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[1]->Value);
+    String^ Country = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[2]->Value);
+    String^ Date = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[3]->Value);
+    String^ Pharmacy_number1 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[4]->Value);
+    String^ Pharmacy_number2 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[5]->Value);
+    String^ Pharmacy_number3 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[6]->Value);
+    String^ Pharmacy_number4 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[7]->Value);
+    String^ Pharmacy_number5 = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[8]->Value);
+    String^ Price = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[9]->Value);
+    std::string id;
+    Convert_String_to_string(Id, id);
+    std::string name;
+    Convert_String_to_string(Name, name);
+    std::string country;
+    Convert_String_to_string(Country, country);
+    std::string date;
+    Convert_String_to_string(Date, date);
+    std::string pharmacy_number[MAX_PHARMACIES];
+    Convert_String_to_string(Pharmacy_number1, pharmacy_number[0]);
+    Convert_String_to_string(Pharmacy_number2, pharmacy_number[1]);
+    Convert_String_to_string(Pharmacy_number3, pharmacy_number[2]);
+    Convert_String_to_string(Pharmacy_number4, pharmacy_number[3]);
+    Convert_String_to_string(Pharmacy_number5, pharmacy_number[4]);
+    std::string price;
+    Convert_String_to_string(Price, price);
+   
+
+    save_meds_line_in_adititional_file(id, name, country, date, pharmacy_number, price, edit_fileName);
+   
     EditForm^ editForm = gcnew  EditForm();//создание формы
     this->Hide();//скрытие текующей формы
     editForm->Show();//открытие главной формы

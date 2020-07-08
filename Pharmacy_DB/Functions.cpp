@@ -4,7 +4,6 @@
 
 #define MAX_MEDICAMENTS 100 //максимальное количество лекарств
 #define MAX_LENGTH 50 //максимальная длина текста
-#define MAX_PHARMACIES 5 //максимальное кол-во аптек, имеющих в наличии лекраство
 #define NUM_KEYS_TABLE 6 //кол-во ключей таблицы (заголовков столбцов)
 #define NUM_SORT_FIELDS 5 //кол-во сортируемых столбцов
 #define NUM_EDIT_FIELDS 5 //кол-во редактируемых столбцов
