@@ -158,6 +158,9 @@
     <EmbeddedResource Include="AdminInterface.resx">
       <DependentUpon>AdminInterface.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditForm.resx">
+      <DependentUpon>EditForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.h</DependentUpon>
     </EmbeddedResource>

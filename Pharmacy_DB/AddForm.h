@@ -55,6 +55,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxNumber5;
 	private: System::Windows::Forms::Button^ buttonAdd;
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ Ì‡Á‡‰ToolStripMenuItem;
 
 	protected:
 
@@ -91,6 +93,9 @@ namespace PharmacyDB {
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->maskedTextBoxNumber5 = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->buttonAdd = (gcnew System::Windows::Forms::Button());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->Ì‡Á‡‰ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// maskedTextBoxName
@@ -268,6 +273,23 @@ namespace PharmacyDB {
 			this->buttonAdd->UseVisualStyleBackColor = true;
 			this->buttonAdd->Click += gcnew System::EventHandler(this, &AddForm::buttonAdd_Click);
 			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->Ì‡Á‡‰ToolStripMenuItem });
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(505, 28);
+			this->menuStrip1->TabIndex = 23;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// Ì‡Á‡‰ToolStripMenuItem
+			// 
+			this->Ì‡Á‡‰ToolStripMenuItem->Name = L"Ì‡Á‡‰ToolStripMenuItem";
+			this->Ì‡Á‡‰ToolStripMenuItem->Size = System::Drawing::Size(65, 24);
+			this->Ì‡Á‡‰ToolStripMenuItem->Text = L"Õ‡Á‡‰";
+			this->Ì‡Á‡‰ToolStripMenuItem->Click += gcnew System::EventHandler(this, &AddForm::Ì‡Á‡‰ToolStripMenuItem_Click);
+			// 
 			// AddForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -293,13 +315,18 @@ namespace PharmacyDB {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->maskedTextBoxName);
 			this->Controls->Add(this->label2);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"AddForm";
 			this->Text = L"AddForm";
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void buttonAdd_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void Ì‡Á‡‰ToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
