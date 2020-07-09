@@ -102,6 +102,7 @@ namespace PharmacyDB {
 			this->ClientSize = System::Drawing::Size(1382, 677);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(1400, 724);
 			this->MinimumSize = System::Drawing::Size(1400, 724);
 			this->Name = L"UserInterface";

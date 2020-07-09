@@ -251,6 +251,7 @@ namespace PharmacyDB {
 			this->Controls->Add(this->menuStrip1);
 			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(1600, 724);
 			this->MinimumSize = System::Drawing::Size(1600, 724);
 			this->Name = L"AdminInterface";

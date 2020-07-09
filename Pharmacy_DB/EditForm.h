@@ -110,9 +110,9 @@ namespace PharmacyDB {
 			this->buttonEdit->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
 			this->buttonEdit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonEdit->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->buttonEdit->Location = System::Drawing::Point(296, 308);
+			this->buttonEdit->Location = System::Drawing::Point(296, 286);
 			this->buttonEdit->Name = L"buttonEdit";
-			this->buttonEdit->Size = System::Drawing::Size(174, 28);
+			this->buttonEdit->Size = System::Drawing::Size(174, 50);
 			this->buttonEdit->TabIndex = 42;
 			this->buttonEdit->Text = L"Редактировать запись";
 			this->buttonEdit->UseVisualStyleBackColor = false;
@@ -347,6 +347,7 @@ namespace PharmacyDB {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
 			this->MaximumSize = System::Drawing::Size(522, 412);
 			this->MinimumSize = System::Drawing::Size(522, 412);
 			this->Name = L"EditForm";

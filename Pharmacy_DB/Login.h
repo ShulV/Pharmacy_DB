@@ -102,12 +102,16 @@ namespace PharmacyDB {
 			// 
 			// btnAdminEntry
 			// 
+			this->btnAdminEntry->BackColor = System::Drawing::SystemColors::Control;
+			this->btnAdminEntry->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->btnAdminEntry->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAdminEntry->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
 			this->btnAdminEntry->Location = System::Drawing::Point(101, 183);
 			this->btnAdminEntry->Name = L"btnAdminEntry";
-			this->btnAdminEntry->Size = System::Drawing::Size(75, 27);
+			this->btnAdminEntry->Size = System::Drawing::Size(75, 34);
 			this->btnAdminEntry->TabIndex = 2;
 			this->btnAdminEntry->Text = L"Войти";
-			this->btnAdminEntry->UseVisualStyleBackColor = true;
+			this->btnAdminEntry->UseVisualStyleBackColor = false;
 			this->btnAdminEntry->Click += gcnew System::EventHandler(this, &Login::btnAdminEntry_Click);
 			// 
 			// textBox1
