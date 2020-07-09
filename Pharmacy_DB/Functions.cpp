@@ -59,8 +59,8 @@ int show_meds(int _countData) { // ÔÓÍÊÖÈß ÂÛÂÎÄÀ ÂÑÅÕ ËÅÊÀĞÑÒÂ
 				cell_num++;
 				//dataGridViewAdmin->
 				try{
-					std::cout << line << std::endl;
-					MessageBox::Show(Convert_string_to_String(line), "ÄÀÍÍÛÅ");
+					//std::cout << line << std::endl;
+					//MessageBox::Show(Convert_string_to_String(line), "ÄÀÍÍÛÅ");
 				}
 				catch (int exception){
 					in.close();
@@ -71,28 +71,6 @@ int show_meds(int _countData) { // ÔÓÍÊÖÈß ÂÛÂÎÄÀ ÂÑÅÕ ËÅÊÀĞÑÒÂ
 		else
 			MessageBox::Show("Ôàéë íå îòêğûëñÿ", "Îøèáêà");//Ôàéë íå îòêğûëñÿ 
 		in.close();     // çàêğûâàåì ôàéë
-		/*file = fopen(fileName, "r+");
-		if (file == NULL)
-			MessageBox::Show("Ôàéë íå îòêğûëñÿ", "Îøèáêà");//Ôàéë íå îòêğûëñÿ 
-		fseek(file, 0L, SEEK_SET);
-		fscanf(file, "%5d", &_countData);
-		DataGridView^ dataGridView1 = gcnew DataGridView();
-		for (int i = 0; i < _countData; i++) {
-fscanf(file, "%5d", &med.id);
-			//ñîçäà¸ì ïîòîê äëÿ ÷òåíèÿ
-			
-			fscanf(file, "%25s", &name);
-			printf("\n\n\n\n\n\n\n\n\n%d\n\n\n\n\n\n\n\n\n\n\n\n", name);
-			fscanf(file, "%25s", &med.country);
-			fscanf(file, "%25s", &med.date);
-			MessageBox::Show(Convert::ToString(med.id) + " " + Convert_string_to_String(name) + " " + Convert_string_to_String(med.country) + " " + Convert_string_to_String(med.date), Convert::ToString(i));
-			for (int j = 0; j < MAX_PHARMACIES; j++)
-				fscanf(file, "%5d", &med.pharmacy_number[j]);
-			fscanf(file, "%10d\n", &med.price);
-
-			
-		}*/
-		//fclose(file);
 	}
 	return 0;
 }

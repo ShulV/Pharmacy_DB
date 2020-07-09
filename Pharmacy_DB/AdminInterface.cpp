@@ -160,9 +160,9 @@ System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ se
 {
     Header();
     Show();
-    Show_meds(countData);
-    int row_count = this->dataGridViewAdmin->Rows->Count - 2;
-    AdminInterface::numericUpDownRecordId->Maximum = row_count;
+    Show_meds(countData=get_count_data(fileName));
+    //int row_count = this->dataGridViewAdmin->Rows->Count - 2;
+    //AdminInterface::numericUpDownRecordId->Maximum = row_count;
     return System::Void();
 }
 

@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <ctype.h>
 
 #define MAX_PHARMACIES 5 //максимальное кол-во аптек, имеющих в наличии лекраство
 

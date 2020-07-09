@@ -227,7 +227,7 @@ namespace PharmacyDB {
 			// 
 			// maskedTextBoxCountry
 			// 
-			this->maskedTextBoxCountry->Location = System::Drawing::Point(29, 160);
+			this->maskedTextBoxCountry->Location = System::Drawing::Point(29, 115);
 			this->maskedTextBoxCountry->Name = L"maskedTextBoxCountry";
 			this->maskedTextBoxCountry->Size = System::Drawing::Size(200, 22);
 			this->maskedTextBoxCountry->TabIndex = 27;
@@ -235,7 +235,7 @@ namespace PharmacyDB {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(26, 140);
+			this->label3->Location = System::Drawing::Point(26, 95);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(165, 17);
 			this->label3->TabIndex = 28;
@@ -244,7 +244,7 @@ namespace PharmacyDB {
 			// maskedTextBoxDate
 			// 
 			this->maskedTextBoxDate->BeepOnError = true;
-			this->maskedTextBoxDate->Location = System::Drawing::Point(29, 115);
+			this->maskedTextBoxDate->Location = System::Drawing::Point(29, 160);
 			this->maskedTextBoxDate->Mask = L"0000/00/00";
 			this->maskedTextBoxDate->Name = L"maskedTextBoxDate";
 			this->maskedTextBoxDate->Size = System::Drawing::Size(200, 22);
@@ -253,7 +253,7 @@ namespace PharmacyDB {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(26, 95);
+			this->label1->Location = System::Drawing::Point(26, 140);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(255, 17);
 			this->label1->TabIndex = 26;

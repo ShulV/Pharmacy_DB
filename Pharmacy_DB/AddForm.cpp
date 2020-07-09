@@ -1,7 +1,7 @@
 #include "AddForm.h"
 #include "AdminInterface.h"
 #include "Functions.h"
-#include <ctype.h>
+
 System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System::EventArgs^ e)
 {
     char fileName[] = "medicines.txt"; //основной файл
@@ -10,8 +10,8 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
     std::string id, name, date, country, pharm_numbers[MAX_PHARMACIES], price;
     String^ Id = Convert::ToString(get_count_data(fileName));
     String^ Name = maskedTextBoxName->Text->ToString();
-    String^ Date = maskedTextBoxDate->Text->ToString();
     String^ Country = maskedTextBoxCountry->Text->ToString();
+    String^ Date = maskedTextBoxDate->Text->ToString();
     String^ Pharm_numbers1 = maskedTextBoxNumber1->Text->ToString();
     String^ Pharm_numbers2 = maskedTextBoxNumber2->Text->ToString();
     String^ Pharm_numbers3 = maskedTextBoxNumber3->Text->ToString();
@@ -20,9 +20,9 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
     String^ Price = maskedTextBoxPrice->Text->ToString();
 
     Convert_String_to_string(Id, id);
-    Convert_String_to_string(Date, date);
     Convert_String_to_string(Name, name);
     Convert_String_to_string(Country, country);
+    Convert_String_to_string(Date, date);
     Convert_String_to_string(Pharm_numbers1, pharm_numbers[0]);
     Convert_String_to_string(Pharm_numbers2, pharm_numbers[1]);
     Convert_String_to_string(Pharm_numbers3, pharm_numbers[2]);
@@ -51,7 +51,7 @@ System::Void PharmacyDB::AddForm::buttonAdd_Click(System::Object^ sender, System
         return System::Void();
     }
     std::string add_fileName = "AddRecord.txt";
-    save_meds_line_in_adititional_file(id, date, name, country, pharm_numbers, price, add_fileName);
+    save_meds_line_in_adititional_file(id, name, country, date, pharm_numbers, price, add_fileName);
     add_line_from_adititional_file_to_main_file(AddFileName, fileName);
 
     AdminInterface^ adminForm = gcnew AdminInterface();//создание формы
