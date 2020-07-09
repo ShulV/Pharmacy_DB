@@ -57,19 +57,6 @@ int show_meds(int _countData) { // ÔÓÍÊÖÈß ÂÛÂÎÄÀ ÂÑÅÕ ËÅÊÀĞÑÒÂ
 			while (getline(in, line, ' '))
 			{
 				cell_num++;
-				/*
-				
-				//dataGridViewAdmin->
-				try{
-					//std::cout << line << std::endl;
-					//MessageBox::Show(Convert_string_to_String(line), "ÄÀÍÍÛÅ");
-				}
-				catch (int exception){
-					in.close();
-				}
-				*/
-				
-
 			}
 		}
 		else

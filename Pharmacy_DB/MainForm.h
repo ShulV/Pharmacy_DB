@@ -39,6 +39,7 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::Button^ btnUser;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ ‚˚ıÓ‰ToolStripMenuItem;
+	private: System::Windows::Forms::Label^ label1;
 
 	private:
 		/// <summary>
@@ -53,29 +54,43 @@ namespace PharmacyDB {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MainForm::typeid));
 			this->btnAdmin = (gcnew System::Windows::Forms::Button());
 			this->btnUser = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->‚˚ıÓ‰ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// btnAdmin
 			// 
-			this->btnAdmin->Location = System::Drawing::Point(423, 227);
+			this->btnAdmin->FlatAppearance->BorderColor = System::Drawing::Color::Black;
+			this->btnAdmin->FlatAppearance->BorderSize = 0;
+			this->btnAdmin->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->btnAdmin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAdmin->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnAdmin->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->btnAdmin->Location = System::Drawing::Point(367, 321);
 			this->btnAdmin->Name = L"btnAdmin";
-			this->btnAdmin->Size = System::Drawing::Size(267, 58);
-			this->btnAdmin->TabIndex = 0;
+			this->btnAdmin->Size = System::Drawing::Size(267, 44);
+			this->btnAdmin->TabIndex = 1;
 			this->btnAdmin->Text = L"¿‰ÏËÌËÒÚ‡ÚÓ";
-			this->btnAdmin->UseVisualStyleBackColor = true;
+			this->btnAdmin->UseVisualStyleBackColor = false;
 			this->btnAdmin->Click += gcnew System::EventHandler(this, &MainForm::btnAdmin_Click);
 			// 
 			// btnUser
 			// 
-			this->btnUser->Location = System::Drawing::Point(423, 300);
+			this->btnUser->FlatAppearance->BorderSize = 0;
+			this->btnUser->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->btnUser->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnUser->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnUser->Location = System::Drawing::Point(367, 387);
 			this->btnUser->Name = L"btnUser";
-			this->btnUser->Size = System::Drawing::Size(267, 58);
-			this->btnUser->TabIndex = 1;
+			this->btnUser->Size = System::Drawing::Size(267, 44);
+			this->btnUser->TabIndex = 2;
 			this->btnUser->Text = L"œÓÎ¸ÁÓ‚‡ÚÂÎ¸";
 			this->btnUser->UseVisualStyleBackColor = true;
 			this->btnUser->Click += gcnew System::EventHandler(this, &MainForm::btnUser_Click);
@@ -86,7 +101,7 @@ namespace PharmacyDB {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->‚˚ıÓ‰ToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1074, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1006, 28);
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -97,16 +112,33 @@ namespace PharmacyDB {
 			this->‚˚ıÓ‰ToolStripMenuItem->Text = L"¬˚ıÓ‰";
 			this->‚˚ıÓ‰ToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::‚˚ıÓ‰ToolStripMenuItem_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Segoe Print", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(290, 214);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(413, 71);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"¬˚·ÂËÚÂ ÂÊËÏ:";
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1074, 506);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1006, 636);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->btnUser);
 			this->Controls->Add(this->btnAdmin);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
 			this->Name = L"MainForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MainForm";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();

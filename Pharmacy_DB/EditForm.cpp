@@ -62,15 +62,15 @@ System::Void PharmacyDB::EditForm::buttonEdit_Click(System::Object^ sender, Syst
 
     return System::Void();
 }
-
 System::Void PharmacyDB::EditForm::назадToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    std::string edit_fileName = "EditRecord.txt";
+    ClearFile(edit_fileName);
     AdminInterface^ adminForm = gcnew  AdminInterface();//создание формы
     this->Hide();//скрытие текующей формы
     adminForm->Show();//открытие главной формы
     return System::Void();
 }
-
 System::Void PharmacyDB::EditForm::EditForm_Shown(System::Object^ sender, System::EventArgs^ e)
 {
     std::string edit_fileName = "EditRecord.txt";

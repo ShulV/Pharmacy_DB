@@ -265,12 +265,17 @@ namespace PharmacyDB {
 			// 
 			// buttonAdd
 			// 
+			this->buttonAdd->BackColor = System::Drawing::SystemColors::Control;
+			this->buttonAdd->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->buttonAdd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonAdd->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->buttonAdd->Location = System::Drawing::Point(316, 309);
 			this->buttonAdd->Name = L"buttonAdd";
-			this->buttonAdd->Size = System::Drawing::Size(153, 28);
+			this->buttonAdd->Size = System::Drawing::Size(142, 32);
 			this->buttonAdd->TabIndex = 22;
 			this->buttonAdd->Text = L"Добавить запись";
-			this->buttonAdd->UseVisualStyleBackColor = true;
+			this->buttonAdd->UseVisualStyleBackColor = false;
 			this->buttonAdd->Click += gcnew System::EventHandler(this, &AddForm::buttonAdd_Click);
 			// 
 			// menuStrip1
@@ -294,6 +299,7 @@ namespace PharmacyDB {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(505, 363);
 			this->Controls->Add(this->buttonAdd);
 			this->Controls->Add(this->label11);

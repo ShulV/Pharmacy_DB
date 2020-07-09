@@ -105,7 +105,7 @@ namespace PharmacyDB {
 			this->btnAdminEntry->Location = System::Drawing::Point(101, 183);
 			this->btnAdminEntry->Name = L"btnAdminEntry";
 			this->btnAdminEntry->Size = System::Drawing::Size(75, 27);
-			this->btnAdminEntry->TabIndex = 1;
+			this->btnAdminEntry->TabIndex = 2;
 			this->btnAdminEntry->Text = L"Войти";
 			this->btnAdminEntry->UseVisualStyleBackColor = true;
 			this->btnAdminEntry->Click += gcnew System::EventHandler(this, &Login::btnAdminEntry_Click);
@@ -116,7 +116,7 @@ namespace PharmacyDB {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->PasswordChar = '*';
 			this->textBox1->Size = System::Drawing::Size(190, 22);
-			this->textBox1->TabIndex = 2;
+			this->textBox1->TabIndex = 1;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Login::textBox1_TextChanged);
 			// 
 			// label1
@@ -132,13 +132,18 @@ namespace PharmacyDB {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(282, 253);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->btnAdminEntry);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximizeBox = false;
+			this->MaximumSize = System::Drawing::Size(300, 300);
+			this->MinimumSize = System::Drawing::Size(300, 300);
 			this->Name = L"Login";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Login";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();

@@ -66,7 +66,7 @@ namespace PharmacyDB {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1041, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1382, 28);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -98,10 +98,14 @@ namespace PharmacyDB {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1041, 508);
+			this->BackColor = System::Drawing::Color::SkyBlue;
+			this->ClientSize = System::Drawing::Size(1382, 677);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximumSize = System::Drawing::Size(1400, 724);
+			this->MinimumSize = System::Drawing::Size(1400, 724);
 			this->Name = L"UserInterface";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"UserInterface";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();

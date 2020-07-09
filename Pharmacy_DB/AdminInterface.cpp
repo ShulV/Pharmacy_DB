@@ -9,7 +9,6 @@ System::Void PharmacyDB::AdminInterface::выйтиИзПрограммыToolStripMenuItem_Click
     Application::Exit();
     return System::Void();
 }
-
 System::Void PharmacyDB::AdminInterface::вернутьсяНазадToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     MainForm^ mainForm = gcnew MainForm();//создание формы
@@ -17,7 +16,6 @@ System::Void PharmacyDB::AdminInterface::вернутьсяНазадToolStripMenuItem_Click(S
     mainForm->Show();//открытие главной формы
     return System::Void();
 }
-
 void PharmacyDB::AdminInterface::Header()
 {
     DataGridViewTextBoxColumn^ c1 = gcnew DataGridViewTextBoxColumn();
@@ -83,17 +81,6 @@ void PharmacyDB::AdminInterface::Header()
     dataGridViewAdmin->TopLeftHeaderCell->Value = "Данные";
 }
 int countData = 0;//текущее кол-во лекарств
-/*void PharmacyDB::AdminInterface::Show()
-{
-    FILE* file;//основной файл
-   
-    char fileName[] = "medicines.txt"; //основной файл
-    countData = get_count_data(fileName);
-   //MessageBox::Show(Convert::ToString(countData),"window");
-    //show_meds(countData);
-}*/
-
-// ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
 char fileName[] = "medicines.txt"; //основной файл
 FILE* file;//основной файл
 #define MAX_MEDICAMENTS 100 //максимальное количество лекарств
@@ -104,7 +91,6 @@ FILE* file;//основной файл
 #define NUM_EDIT_FIELDS 5 //кол-во редактируемых столбцов
 #define LENGTH_DATE 10 //длина даты (2000.09.14)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/*med - структура для добавления записи, редактирования записи new_med - для записи данных при редактировании*/
 struct {
 	int id; //ключ
 	std::string name, //название
@@ -112,7 +98,7 @@ struct {
 		date; //дата производства
 	int pharmacy_number[MAX_PHARMACIES]; //номера аптек
 	int price; //максимальная цена
-} med, new_med;
+} med;
 /**/
 void PharmacyDB::AdminInterface::Show_meds(int _countData)
 {
