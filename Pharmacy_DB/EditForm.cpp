@@ -6,7 +6,7 @@ System::Void PharmacyDB::EditForm::buttonEdit_Click(System::Object^ sender, Syst
 {
     char fileName[] = "medicines.txt"; //основной файл
     std::string id, name, date, country, pharm_numbers[MAX_PHARMACIES], price;
-    String^ Id = Convert::ToString(get_count_data(fileName));
+    String^ Id = label_Id->Text->ToString();
     String^ Name = maskedTextBoxName->Text->ToString();
     String^ Country = maskedTextBoxCountry->Text->ToString();
     String^ Date = maskedTextBoxDate->Text->ToString();
@@ -51,6 +51,15 @@ System::Void PharmacyDB::EditForm::buttonEdit_Click(System::Object^ sender, Syst
     std::string edit_fileName = "EditRecord.txt";
     save_meds_line_in_adititional_file(id, name, country, date, pharm_numbers, price, edit_fileName);
 
+    AdminInterface^ adminForm = gcnew  AdminInterface();//создание формы
+    this->Hide();//скрытие текующей формы
+    adminForm->Show();//открытие главной формы
+    return System::Void();
+    //AdminInterface^ adminForm = gcnew  AdminInterface();//создание формы
+   //adminForm->dataGridViewAdmin->Text = "FFFFFFFFFFFf";
+   
+
+
     return System::Void();
 }
 
@@ -70,6 +79,7 @@ System::Void PharmacyDB::EditForm::EditForm_Shown(System::Object^ sender, System
     if (in.is_open())
     {
         getline(in, line, ';');
+        EditForm::label_Id->Text = (Convert_string_to_String(line));
         getline(in, line, ';');
         EditForm::maskedTextBoxName->AppendText(Convert_string_to_String(line));
         getline(in, line, ';');

@@ -102,7 +102,6 @@ int save_meds_line_in_adititional_file(std::string id, std::string name, std::st
 	record.close();
 	return 0;
 }
-
 int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNameTo)
 {
 	//чтение новой записи
@@ -150,7 +149,20 @@ int add_line_from_adititional_file_to_main_file(char* fileNameFrom, char* fileNa
 
 	return 0;
 }
+void ClearFile(std::string filename) {//очистка файла
+	std::ofstream file(filename, std::ios::out | std::ios::trunc);
+	file.close();
+}
+bool file_is_empty(std::string fileName) {
+	std::fstream file(fileName);
+	if (!file.is_open())
+		MessageBox::Show("Файл не открылся", "Ошибка");
+	else
+		if (file.peek() == EOF) return true;
+		else return false;
+	
 
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*Реализация функций*/
 /*Конвертируем System::string ^ в std::string*/

@@ -61,6 +61,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ Ì‡Á‡‰ToolStripMenuItem;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label_Id;
 
 	private:
 		/// <summary>
@@ -97,6 +99,8 @@ namespace PharmacyDB {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->Ì‡Á‡‰ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label_Id = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -292,11 +296,30 @@ namespace PharmacyDB {
 			this->Ì‡Á‡‰ToolStripMenuItem->Text = L"Õ‡Á‡‰";
 			this->Ì‡Á‡‰ToolStripMenuItem->Click += gcnew System::EventHandler(this, &EditForm::Ì‡Á‡‰ToolStripMenuItem_Click);
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(302, 339);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(23, 17);
+			this->label6->TabIndex = 44;
+			this->label6->Text = L"id:";
+			// 
+			// label_Id
+			// 
+			this->label_Id->AutoSize = true;
+			this->label_Id->Location = System::Drawing::Point(351, 339);
+			this->label_Id->Name = L"label_Id";
+			this->label_Id->Size = System::Drawing::Size(0, 17);
+			this->label_Id->TabIndex = 45;
+			// 
 			// EditForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(504, 365);
+			this->Controls->Add(this->label_Id);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->buttonEdit);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->maskedTextBoxNumber5);

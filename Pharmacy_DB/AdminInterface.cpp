@@ -155,7 +155,6 @@ void PharmacyDB::AdminInterface::Show_meds(int _countData)
 		}
 		return;
 }
-
 void PharmacyDB::AdminInterface::Save_data_grid_in_file(char* fileName)
 {
     if (AdminInterface::dataGridViewAdmin->Rows->Count == 0)
@@ -185,24 +184,44 @@ void PharmacyDB::AdminInterface::Save_data_grid_in_file(char* fileName)
         file.close();     // закрываем файл
     }        
 }
-
-
-
 System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e)
 {
+    std::string add_fileName = "AddRecord.txt";
+    std::string edit_fileName = "EditRecord.txt";
+    std::string fileName_ = "medicines.txt";
     Header();
-    Show();
-    Show_meds(countData=get_count_data(fileName));
+    Show_meds(countData = get_count_data(fileName));
+    if (!file_is_empty(edit_fileName)) {
+        MessageBox::Show("file_is__not_empty", "Предупреждение");
+        std::string line;
+        std::ifstream in(edit_fileName); // окрываем файл для чтения
+        if (in.is_open())
+        {
+            std::string row;
+            getline(in, row, ';');
+            int cell = 0;
+            while (getline(in, line, ';')&&cell<9)
+            {
+                cell++;
+                dataGridViewAdmin->Rows[atoi(row.c_str())]->Cells[cell]->Value = Convert_string_to_String(line);
+                MessageBox::Show(Convert_string_to_String(line)+" "+cell, "Предупреждение");
+            }
+        }
+        Save_data_grid_in_file(fileName);
+    }
+
+    ClearFile(add_fileName);
+    ClearFile(edit_fileName);
+    //MessageBox::Show("SHOWN", "Предупреждение");
+   
     //int row_count = this->dataGridViewAdmin->Rows->Count - 2;
     //AdminInterface::numericUpDownRecordId->Maximum = row_count;
     return System::Void();
 }
-
 System::Void PharmacyDB::AdminInterface::добавитьДанныеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
     return System::Void();
 }
-
 System::Void PharmacyDB::AdminInterface::buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e)
 {
     AddForm^ addForm = gcnew AddForm();//создание формы
@@ -210,13 +229,12 @@ System::Void PharmacyDB::AdminInterface::buttonAddLine_Click(System::Object^ sen
     addForm->Show();//открытие главной формы
     return System::Void();
 }
-
 System::Void PharmacyDB::AdminInterface::buttonEditLine_Click(System::Object^ sender, System::EventArgs^ e)
 {
     std::string edit_fileName = "EditRecord.txt";
 
 
-    String^ Id = Convert::ToString(Convert::ToInt32(dataGridViewAdmin->CurrentRow->Cells[0]->Value));
+    String^ Id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
     String^ Name = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[1]->Value);
     String^ Country = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[2]->Value);
     String^ Date = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[3]->Value);
@@ -251,10 +269,18 @@ System::Void PharmacyDB::AdminInterface::buttonEditLine_Click(System::Object^ se
     editForm->Show();//открытие главной формы
     return System::Void();
 }
-
 System::Void PharmacyDB::AdminInterface::buttonSaveData_Click(System::Object^ sender, System::EventArgs^ e)
 {
     Save_data_grid_in_file(fileName);
+    return System::Void();
+}
+System::Void PharmacyDB::AdminInterface::AdminInterface_Load(System::Object^ sender, System::EventArgs^ e)
+{
+    return System::Void();
+}
+System::Void PharmacyDB::AdminInterface::buttonDownload_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    
     return System::Void();
 }
 

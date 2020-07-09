@@ -22,17 +22,19 @@ namespace PharmacyDB {
 			//TODO: äîáàâüòå êîä êîíñòğóêòîğà
 			//
 		}
-	private: System::Windows::Forms::GroupBox^ groupBox1;
+	public: System::Windows::Forms::GroupBox^ groupBox1;
 	public:
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Button^ buttonAddLine;
 	private: System::Windows::Forms::Button^ buttonEditLine;
-	private: System::Windows::Forms::Button^ buttonSaveData;
 
 
 
 
-	private:
+
+
+
+	public:
 		DataGridView^ DataGridViewAdmin = gcnew DataGridView();
 	protected:
 		/// <summary>
@@ -49,7 +51,7 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::ToolStripMenuItem^ âûõîäToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ âûéòèÈçÏğîãğàììûToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ âåğíóòüñÿÍàçàäToolStripMenuItem;
-	private: System::Windows::Forms::DataGridView^ dataGridViewAdmin;
+	public: System::Windows::Forms::DataGridView^ dataGridViewAdmin;
 	private: System::Windows::Forms::ToolStripMenuItem^ ğåäàêòèğîâàòüÄàííûåToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ äîáàâèòüÄàííûåToolStripMenuItem;
 	protected:
@@ -78,7 +80,6 @@ namespace PharmacyDB {
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->buttonEditLine = (gcnew System::Windows::Forms::Button());
 			this->buttonAddLine = (gcnew System::Windows::Forms::Button());
-			this->buttonSaveData = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->BeginInit();
 			this->groupBox1->SuspendLayout();
@@ -161,7 +162,6 @@ namespace PharmacyDB {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->buttonSaveData);
 			this->groupBox2->Controls->Add(this->buttonEditLine);
 			this->groupBox2->Controls->Add(this->buttonAddLine);
 			this->groupBox2->Location = System::Drawing::Point(1019, 31);
@@ -191,16 +191,6 @@ namespace PharmacyDB {
 			this->buttonAddLine->UseVisualStyleBackColor = true;
 			this->buttonAddLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonAddLine_Click);
 			// 
-			// buttonSaveData
-			// 
-			this->buttonSaveData->Location = System::Drawing::Point(21, 466);
-			this->buttonSaveData->Name = L"buttonSaveData";
-			this->buttonSaveData->Size = System::Drawing::Size(187, 29);
-			this->buttonSaveData->TabIndex = 2;
-			this->buttonSaveData->Text = L"ñîõğàíèòü";
-			this->buttonSaveData->UseVisualStyleBackColor = true;
-			this->buttonSaveData->Click += gcnew System::EventHandler(this, &AdminInterface::buttonSaveData_Click);
-			// 
 			// AdminInterface
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -212,6 +202,7 @@ namespace PharmacyDB {
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"AdminInterface";
 			this->Text = L"AdminInterface";
+			this->Load += gcnew System::EventHandler(this, &AdminInterface::AdminInterface_Load);
 			this->Shown += gcnew System::EventHandler(this, &AdminInterface::AdminInterface_Shown);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
@@ -234,5 +225,7 @@ private: System::Void äîáàâèòüÄàííûåToolStripMenuItem_Click(System::Object^ send
 private: System::Void buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonEditLine_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonSaveData_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void AdminInterface_Load(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonDownload_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
