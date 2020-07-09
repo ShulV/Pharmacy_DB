@@ -272,12 +272,31 @@ System::Void PharmacyDB::AdminInterface::buttonDownload_Click(System::Object^ se
 System::Void PharmacyDB::AdminInterface::buttonDeleteLine_Click(System::Object^ sender, System::EventArgs^ e)
 {
     MessageBoxButtons buttons = MessageBoxButtons::YesNo;
-    String^ current_id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
-    if (MessageBox::Show("Вы точно хотите удалить\nзапись с id = "+ current_id +" ?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
-       
+    String^ Current_id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
+    if (MessageBox::Show("Вы точно хотите удалить\nзапись с id = "+ Current_id +" ?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+        
+        String^ Current_id = dataGridViewAdmin->CurrentRow->Cells[0]->Value->ToString();
+        std::string current_id;
+        Convert_String_to_string(Current_id, current_id);
+        int cur_id = atoi(current_id.c_str());
+        dataGridViewAdmin->Rows->Remove(dataGridViewAdmin->CurrentRow);
+        dataGridViewAdmin->Refresh();
+        int count_rows = dataGridViewAdmin->Rows->Count;
+        for (cur_id; cur_id < count_rows; cur_id++) {
+            if (cur_id == count_rows - 1) {
+                dataGridViewAdmin->Rows[cur_id]->Cells[0]->Value = "";
+            }
+            else{
+                String^ New_id = dataGridViewAdmin->Rows[cur_id]->Cells[0]->Value->ToString();
+                std::string new_id;
+                Convert_String_to_string(New_id, new_id);
+                int int_new_id = atoi(new_id.c_str());
+                dataGridViewAdmin->Rows[cur_id]->Cells[0]->Value = --int_new_id;
+            }
+           
+        }
+        Save_data_grid_in_file(fileName);
     }
-    
-    
     return System::Void();
 }
 

@@ -81,9 +81,9 @@ namespace PharmacyDB {
 			this->dataGridViewAdmin = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
-			this->buttonEditLine = (gcnew System::Windows::Forms::Button());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->buttonDeleteLine = (gcnew System::Windows::Forms::Button());
+			this->buttonEditLine = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonAddLine = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
@@ -180,20 +180,6 @@ namespace PharmacyDB {
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Работа с данными";
 			// 
-			// buttonEditLine
-			// 
-			this->buttonEditLine->BackColor = System::Drawing::SystemColors::Control;
-			this->buttonEditLine->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
-			this->buttonEditLine->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonEditLine->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->buttonEditLine->Location = System::Drawing::Point(15, 44);
-			this->buttonEditLine->Name = L"buttonEditLine";
-			this->buttonEditLine->Size = System::Drawing::Size(187, 39);
-			this->buttonEditLine->TabIndex = 1;
-			this->buttonEditLine->Text = L"редактировать";
-			this->buttonEditLine->UseVisualStyleBackColor = false;
-			this->buttonEditLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonEditLine_Click);
-			// 
 			// groupBox3
 			// 
 			this->groupBox3->Controls->Add(this->buttonDeleteLine);
@@ -218,6 +204,20 @@ namespace PharmacyDB {
 			this->buttonDeleteLine->Text = L"удалить";
 			this->buttonDeleteLine->UseVisualStyleBackColor = false;
 			this->buttonDeleteLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonDeleteLine_Click);
+			// 
+			// buttonEditLine
+			// 
+			this->buttonEditLine->BackColor = System::Drawing::SystemColors::Control;
+			this->buttonEditLine->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->buttonEditLine->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonEditLine->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
+			this->buttonEditLine->Location = System::Drawing::Point(15, 44);
+			this->buttonEditLine->Name = L"buttonEditLine";
+			this->buttonEditLine->Size = System::Drawing::Size(187, 39);
+			this->buttonEditLine->TabIndex = 1;
+			this->buttonEditLine->Text = L"редактировать";
+			this->buttonEditLine->UseVisualStyleBackColor = false;
+			this->buttonEditLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonEditLine_Click);
 			// 
 			// label1
 			// 
@@ -245,6 +245,7 @@ namespace PharmacyDB {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(1582, 677);
 			this->Controls->Add(this->groupBox2);
