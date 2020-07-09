@@ -217,6 +217,7 @@ namespace PharmacyDB {
 			this->buttonDeleteLine->TabIndex = 2;
 			this->buttonDeleteLine->Text = L"удалить";
 			this->buttonDeleteLine->UseVisualStyleBackColor = false;
+			this->buttonDeleteLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonDeleteLine_Click);
 			// 
 			// label1
 			// 
@@ -284,5 +285,6 @@ private: System::Void buttonEditLine_Click(System::Object^ sender, System::Event
 private: System::Void buttonSaveData_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void AdminInterface_Load(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonDownload_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonDeleteLine_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

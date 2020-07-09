@@ -112,7 +112,7 @@ namespace PharmacyDB {
 			this->buttonEdit->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
 			this->buttonEdit->Location = System::Drawing::Point(296, 286);
 			this->buttonEdit->Name = L"buttonEdit";
-			this->buttonEdit->Size = System::Drawing::Size(174, 50);
+			this->buttonEdit->Size = System::Drawing::Size(196, 50);
 			this->buttonEdit->TabIndex = 42;
 			this->buttonEdit->Text = L"Редактировать запись";
 			this->buttonEdit->UseVisualStyleBackColor = false;

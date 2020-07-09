@@ -269,5 +269,16 @@ System::Void PharmacyDB::AdminInterface::buttonDownload_Click(System::Object^ se
     
     return System::Void();
 }
+System::Void PharmacyDB::AdminInterface::buttonDeleteLine_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    MessageBoxButtons buttons = MessageBoxButtons::YesNo;
+    String^ current_id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
+    if (MessageBox::Show("Вы точно хотите удалить\nзапись с id = "+ current_id +" ?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+       
+    }
+    
+    
+    return System::Void();
+}
 
 
