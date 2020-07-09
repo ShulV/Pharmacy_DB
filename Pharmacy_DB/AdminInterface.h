@@ -27,7 +27,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Button^ buttonAddLine;
 	private: System::Windows::Forms::Button^ buttonEditLine;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDownRecordId;
+	private: System::Windows::Forms::Button^ buttonSaveData;
+
 
 
 
@@ -77,12 +78,11 @@ namespace PharmacyDB {
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->buttonEditLine = (gcnew System::Windows::Forms::Button());
 			this->buttonAddLine = (gcnew System::Windows::Forms::Button());
-			this->numericUpDownRecordId = (gcnew System::Windows::Forms::NumericUpDown());
+			this->buttonSaveData = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRecordId))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -161,7 +161,7 @@ namespace PharmacyDB {
 			// 
 			// groupBox2
 			// 
-			this->groupBox2->Controls->Add(this->numericUpDownRecordId);
+			this->groupBox2->Controls->Add(this->buttonSaveData);
 			this->groupBox2->Controls->Add(this->buttonEditLine);
 			this->groupBox2->Controls->Add(this->buttonAddLine);
 			this->groupBox2->Location = System::Drawing::Point(1019, 31);
@@ -173,7 +173,7 @@ namespace PharmacyDB {
 			// 
 			// buttonEditLine
 			// 
-			this->buttonEditLine->Location = System::Drawing::Point(21, 176);
+			this->buttonEditLine->Location = System::Drawing::Point(21, 75);
 			this->buttonEditLine->Name = L"buttonEditLine";
 			this->buttonEditLine->Size = System::Drawing::Size(187, 29);
 			this->buttonEditLine->TabIndex = 1;
@@ -191,13 +191,15 @@ namespace PharmacyDB {
 			this->buttonAddLine->UseVisualStyleBackColor = true;
 			this->buttonAddLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonAddLine_Click);
 			// 
-			// numericUpDownRecordId
+			// buttonSaveData
 			// 
-			this->numericUpDownRecordId->Location = System::Drawing::Point(88, 224);
-			this->numericUpDownRecordId->Name = L"numericUpDownRecordId";
-			this->numericUpDownRecordId->Size = System::Drawing::Size(120, 22);
-			this->numericUpDownRecordId->TabIndex = 2;
-			
+			this->buttonSaveData->Location = System::Drawing::Point(21, 466);
+			this->buttonSaveData->Name = L"buttonSaveData";
+			this->buttonSaveData->Size = System::Drawing::Size(187, 29);
+			this->buttonSaveData->TabIndex = 2;
+			this->buttonSaveData->Text = L"сохранить";
+			this->buttonSaveData->UseVisualStyleBackColor = true;
+			this->buttonSaveData->Click += gcnew System::EventHandler(this, &AdminInterface::buttonSaveData_Click);
 			// 
 			// AdminInterface
 			// 
@@ -216,7 +218,6 @@ namespace PharmacyDB {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox2->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRecordId))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -224,12 +225,14 @@ namespace PharmacyDB {
 #pragma endregion
 	private: System::Void выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void вернутьс€ЌазадToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
-	private: void Header();
-	private: void Show();
-		   private: void Show_meds(int _countData);
+	private: void Header();//заголовок таблицы
+	//private: void Show();
+	private: void Show_meds(int _countData);//показывает данные в дата грид
+	private: void Save_data_grid_in_file(char* fileName);//сохран€ет данные из дата грид в файл
 private: System::Void AdminInterface_Shown(System::Object^ sender, System::EventArgs^ e);
 private: System::Void добавитьƒанныеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonAddLine_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonEditLine_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonSaveData_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

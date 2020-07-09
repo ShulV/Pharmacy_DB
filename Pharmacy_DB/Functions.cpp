@@ -57,6 +57,8 @@ int show_meds(int _countData) { // ÔÓÍÊÖÈß ÂÛÂÎÄÀ ÂÑÅÕ ËÅÊÀĞÑÒÂ
 			while (getline(in, line, ' '))
 			{
 				cell_num++;
+				/*
+				
 				//dataGridViewAdmin->
 				try{
 					//std::cout << line << std::endl;
@@ -65,6 +67,8 @@ int show_meds(int _countData) { // ÔÓÍÊÖÈß ÂÛÂÎÄÀ ÂÑÅÕ ËÅÊÀĞÑÒÂ
 				catch (int exception){
 					in.close();
 				}
+				*/
+				
 
 			}
 		}

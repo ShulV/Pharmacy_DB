@@ -83,7 +83,7 @@ void PharmacyDB::AdminInterface::Header()
     dataGridViewAdmin->TopLeftHeaderCell->Value = "Данные";
 }
 int countData = 0;//текущее кол-во лекарств
-void PharmacyDB::AdminInterface::Show()
+/*void PharmacyDB::AdminInterface::Show()
 {
     FILE* file;//основной файл
    
@@ -91,7 +91,8 @@ void PharmacyDB::AdminInterface::Show()
     countData = get_count_data(fileName);
    //MessageBox::Show(Convert::ToString(countData),"window");
     //show_meds(countData);
-}
+}*/
+
 // ФУНКЦИЯ ВЫВОДА ВСЕХ ЛЕКАРСТВ
 char fileName[] = "medicines.txt"; //основной файл
 FILE* file;//основной файл
@@ -112,7 +113,7 @@ struct {
 	int pharmacy_number[MAX_PHARMACIES]; //номера аптек
 	int price; //максимальная цена
 } med, new_med;
-
+/**/
 void PharmacyDB::AdminInterface::Show_meds(int _countData)
 {
 		if (_countData == 0)
@@ -137,13 +138,14 @@ void PharmacyDB::AdminInterface::Show_meds(int _countData)
                         count_row++;
                     }
                     dataGridViewAdmin->Rows[count_row]->Cells[cell_num]->Value = Convert_string_to_String(line);
-						try {
+                    /*	try {
 						std::cout << line << std::endl;
-						//MessageBox::Show(Convert_string_to_String(line), "ДАННЫЕ");
+						MessageBox::Show(Convert_string_to_String(line), "ДАННЫЕ");
 					}
 					catch (int exception) {
 						in.close();
-					}
+					}*/
+					
                     cell_num++;
 				}
 			}
@@ -152,6 +154,36 @@ void PharmacyDB::AdminInterface::Show_meds(int _countData)
 			in.close();     // закрываем файл
 		}
 		return;
+}
+
+void PharmacyDB::AdminInterface::Save_data_grid_in_file(char* fileName)
+{
+    if (AdminInterface::dataGridViewAdmin->Rows->Count == 0)
+    {
+        MessageBox::Show("Записей в файле нет", "Предупреждение");
+    }
+    else {
+        countData = dataGridViewAdmin->RowCount - 1;
+        std::ofstream file(fileName);
+        std::string cell_data;
+        if (file) {
+            file << countData << std::endl;
+            
+            for (int row = 0; row < countData; row++)
+                for (int cell = 0; cell < 10; cell++)
+                {
+                    //MessageBox::Show(dataGridViewAdmin->Rows[row]->Cells[cell]->Value->ToString(), "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+                    Convert_String_to_string(dataGridViewAdmin->Rows[row]->Cells[cell]->Value->ToString(), cell_data);
+                    file << cell_data << ";";
+                }
+            
+            
+            file << std::endl;
+        }
+        else
+            MessageBox::Show("Файл не открылся", "Ошибка");//Файл не открылся 
+        file.close();     // закрываем файл
+    }        
 }
 
 
@@ -183,7 +215,7 @@ System::Void PharmacyDB::AdminInterface::buttonEditLine_Click(System::Object^ se
 {
     std::string edit_fileName = "EditRecord.txt";
 
-    int number_row = Int32(AdminInterface::numericUpDownRecordId->Value);//номер ряда
+
     String^ Id = Convert::ToString(Convert::ToInt32(dataGridViewAdmin->CurrentRow->Cells[0]->Value));
     String^ Name = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[1]->Value);
     String^ Country = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[2]->Value);
@@ -217,6 +249,12 @@ System::Void PharmacyDB::AdminInterface::buttonEditLine_Click(System::Object^ se
     EditForm^ editForm = gcnew  EditForm();//создание формы
     this->Hide();//скрытие текующей формы
     editForm->Show();//открытие главной формы
+    return System::Void();
+}
+
+System::Void PharmacyDB::AdminInterface::buttonSaveData_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    Save_data_grid_in_file(fileName);
     return System::Void();
 }
 
