@@ -3,6 +3,7 @@
 #include "Functions.h"
 #include "AddForm.h"
 #include "EditForm.h"
+#include "RequestForm.h"
 
 System::Void PharmacyDB::AdminInterface::выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
@@ -299,5 +300,14 @@ System::Void PharmacyDB::AdminInterface::buttonDeleteLine_Click(System::Object^ 
     }
     return System::Void();
 }
+System::Void PharmacyDB::AdminInterface::buttonDoRequest_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    RequestForm^ requestForm = gcnew  RequestForm();//создание формы
+    this->Hide();//скрытие текующей формы
+    requestForm->Show();//открытие главной формы
+    return System::Void();
+    return System::Void();
+}
+
 
 

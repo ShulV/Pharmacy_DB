@@ -30,6 +30,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::GroupBox^ groupBox3;
 	private: System::Windows::Forms::Button^ buttonDeleteLine;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::GroupBox^ groupBox4;
+	private: System::Windows::Forms::Button^ buttonDoRequest;
 
 
 
@@ -86,11 +88,14 @@ namespace PharmacyDB {
 			this->buttonEditLine = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonAddLine = (gcnew System::Windows::Forms::Button());
+			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
+			this->buttonDoRequest = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewAdmin))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
+			this->groupBox4->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -241,6 +246,30 @@ namespace PharmacyDB {
 			this->buttonAddLine->UseVisualStyleBackColor = false;
 			this->buttonAddLine->Click += gcnew System::EventHandler(this, &AdminInterface::buttonAddLine_Click);
 			// 
+			// groupBox4
+			// 
+			this->groupBox4->Controls->Add(this->buttonDoRequest);
+			this->groupBox4->Location = System::Drawing::Point(1338, 554);
+			this->groupBox4->Name = L"groupBox4";
+			this->groupBox4->Size = System::Drawing::Size(232, 119);
+			this->groupBox4->TabIndex = 4;
+			this->groupBox4->TabStop = false;
+			this->groupBox4->Text = L"Поиск данных с условием";
+			// 
+			// buttonDoRequest
+			// 
+			this->buttonDoRequest->BackColor = System::Drawing::SystemColors::Control;
+			this->buttonDoRequest->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->buttonDoRequest->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonDoRequest->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
+			this->buttonDoRequest->Location = System::Drawing::Point(21, 42);
+			this->buttonDoRequest->Name = L"buttonDoRequest";
+			this->buttonDoRequest->Size = System::Drawing::Size(187, 41);
+			this->buttonDoRequest->TabIndex = 3;
+			this->buttonDoRequest->Text = L"Сделать запрос";
+			this->buttonDoRequest->UseVisualStyleBackColor = false;
+			this->buttonDoRequest->Click += gcnew System::EventHandler(this, &AdminInterface::buttonDoRequest_Click);
+			// 
 			// AdminInterface
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -248,6 +277,7 @@ namespace PharmacyDB {
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(1582, 677);
+			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->menuStrip1);
@@ -268,6 +298,7 @@ namespace PharmacyDB {
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			this->groupBox3->ResumeLayout(false);
+			this->groupBox4->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -287,5 +318,6 @@ private: System::Void buttonSaveData_Click(System::Object^ sender, System::Event
 private: System::Void AdminInterface_Load(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonDownload_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonDeleteLine_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonDoRequest_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
