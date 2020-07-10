@@ -41,8 +41,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	public:
 	private: System::Windows::Forms::ToolStripMenuItem^ âûõîäToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ âûéòèÈçÏğîãğàììûToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ âåğíóòüñÿÍàçàäToolStripMenuItem;
+
+
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxPrice;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxNumber;
@@ -58,6 +58,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::RadioButton^ radioButtonPriceMore;
 	private: System::Windows::Forms::RadioButton^ radioButtonPriceLess;
 	private: System::Windows::Forms::Button^ buttonShowDataRequest;
+	private: System::Windows::Forms::ToolStripMenuItem^ íàçàäToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ ñïğàâêàToolStripMenuItem;
 
 	private:
 		/// <summary>
@@ -76,8 +78,8 @@ namespace PharmacyDB {
 			this->dataGridViewRequest = (gcnew System::Windows::Forms::DataGridView());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->âåğíóòüñÿÍàçàäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->íàçàäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ñïğàâêàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->maskedTextBoxPrice = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->maskedTextBoxNumber = (gcnew System::Windows::Forms::MaskedTextBox());
@@ -129,7 +131,10 @@ namespace PharmacyDB {
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->âûõîäToolStripMenuItem,
+					this->íàçàäToolStripMenuItem, this->ñïğàâêàToolStripMenuItem
+			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
@@ -139,25 +144,24 @@ namespace PharmacyDB {
 			// 
 			// âûõîäToolStripMenuItem
 			// 
-			this->âûõîäToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->âûéòèÈçÏğîãğàììûToolStripMenuItem,
-					this->âåğíóòüñÿÍàçàäToolStripMenuItem
-			});
 			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
-			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(53, 20);
-			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(137, 20);
+			this->âûõîäToolStripMenuItem->Text = L"Âûõîä èç ïğîãğàììû";
+			this->âûõîäToolStripMenuItem->Click += gcnew System::EventHandler(this, &RequestForm::âûõîäToolStripMenuItem_Click);
 			// 
-			// âûéòèÈçÏğîãğàììûToolStripMenuItem
+			// íàçàäToolStripMenuItem
 			// 
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Name = L"âûéòèÈçÏğîãğàììûToolStripMenuItem";
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Size = System::Drawing::Size(193, 22);
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Text = L"Âûéòè èç ïğîãğàììû";
+			this->íàçàäToolStripMenuItem->Name = L"íàçàäToolStripMenuItem";
+			this->íàçàäToolStripMenuItem->Size = System::Drawing::Size(108, 20);
+			this->íàçàäToolStripMenuItem->Text = L"Â ãëàâíîå ìåíş";
+			this->íàçàäToolStripMenuItem->Click += gcnew System::EventHandler(this, &RequestForm::íàçàäToolStripMenuItem_Click);
 			// 
-			// âåğíóòüñÿÍàçàäToolStripMenuItem
+			// ñïğàâêàToolStripMenuItem
 			// 
-			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Name = L"âåğíóòüñÿÍàçàäToolStripMenuItem";
-			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(193, 22);
-			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Text = L"Âåğíóòüñÿ íàçàä";
+			this->ñïğàâêàToolStripMenuItem->Name = L"ñïğàâêàToolStripMenuItem";
+			this->ñïğàâêàToolStripMenuItem->Size = System::Drawing::Size(65, 20);
+			this->ñïğàâêàToolStripMenuItem->Text = L"Ñïğàâêà";
+			this->ñïğàâêàToolStripMenuItem->Click += gcnew System::EventHandler(this, &RequestForm::ñïğàâêàToolStripMenuItem_Click);
 			// 
 			// maskedTextBoxPrice
 			// 
@@ -347,5 +351,8 @@ namespace PharmacyDB {
 	private: System::Void RequestForm_Shown(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonShowDataRequest_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void RequestForm_Load(System::Object^ sender, System::EventArgs^ e);
+private: System::Void âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void íàçàäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void ñïğàâêàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }

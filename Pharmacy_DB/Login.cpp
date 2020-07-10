@@ -4,7 +4,10 @@
 
 System::Void PharmacyDB::Login::выйтиИзПрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    Application::Exit();
+    MessageBoxButtons buttons = MessageBoxButtons::YesNo;
+    if (MessageBox::Show("Вы точно хотите выйти из программы?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+        Application::Exit();
+    }
     return System::Void();
 }
 

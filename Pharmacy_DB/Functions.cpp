@@ -84,7 +84,7 @@ int save_meds_line_in_adititional_file(std::string id, std::string name, std::st
 	}
 	else
 		MessageBox::Show("Ошибка открытия файла", "Ошибка");
-	MessageBox::Show("Данные сохранены в файл", "Успешно");
+	//MessageBox::Show("Данные сохранены в файл", "Успешно");
 
 	record.close();
 	return 0;

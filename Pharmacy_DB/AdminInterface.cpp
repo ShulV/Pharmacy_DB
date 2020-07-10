@@ -7,7 +7,10 @@
 
 System::Void PharmacyDB::AdminInterface::выйтиИзПрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-    Application::Exit();
+    MessageBoxButtons buttons = MessageBoxButtons::YesNo;
+    if (MessageBox::Show("Вы точно хотите выйти из программы?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+        Application::Exit();
+    }
     return System::Void();
 }
 System::Void PharmacyDB::AdminInterface::вернутьсяНазадToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
@@ -261,7 +264,10 @@ System::Void PharmacyDB::AdminInterface::buttonDeleteLine_Click(System::Object^ 
 {
     MessageBoxButtons buttons = MessageBoxButtons::YesNo;
     String^ Current_id = Convert::ToString(dataGridViewAdmin->CurrentRow->Cells[0]->Value);
-    if (MessageBox::Show("Вы точно хотите удалить\nзапись с id = "+ Current_id +" ?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+    std::string current_id;
+    Convert_String_to_string(Current_id, current_id);
+    int int_current_id = std::stoi(current_id);
+    if (MessageBox::Show("Вы точно хотите удалить запись с id = " + int_current_id +" ?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
         
         String^ Current_id = dataGridViewAdmin->CurrentRow->Cells[0]->Value->ToString();
         std::string current_id;
@@ -292,7 +298,6 @@ System::Void PharmacyDB::AdminInterface::buttonDoRequest_Click(System::Object^ s
     RequestForm^ requestForm = gcnew  RequestForm();//создание формы
     this->Hide();//скрытие текующей формы
     requestForm->Show();//открытие главной формы
-    return System::Void();
     return System::Void();
 }
 

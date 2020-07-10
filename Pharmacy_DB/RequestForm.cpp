@@ -1,6 +1,6 @@
 #include "RequestForm.h"
 #include "Functions.h"
-
+#include "MainForm.h"
 
 
 
@@ -221,7 +221,6 @@ System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object
     // dataGridViewRequest->Refresh();
     return System::Void();
 }
-
 System::Void PharmacyDB::RequestForm::RequestForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
     char fileName[] = "medicines.txt"; //основной файл
@@ -229,6 +228,26 @@ System::Void PharmacyDB::RequestForm::RequestForm_Load(System::Object^ sender, S
     Header();
     //MessageBox::Show(Convert_string_to_String(std::to_string(countData)));
     Show_meds(countData);
+    return System::Void();
+}
+System::Void PharmacyDB::RequestForm::выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    MessageBoxButtons buttons = MessageBoxButtons::YesNo;
+    if (MessageBox::Show("Вы точно хотите выйти из программы?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+        Application::Exit();
+    }
+    return System::Void();
+}
+System::Void PharmacyDB::RequestForm::назадToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    MainForm^ mainForm = gcnew MainForm();//создание формы
+    this->Hide();//скрытие текующей формы
+    mainForm->Show();//открытие главной формы
+    return System::Void();
+}
+
+System::Void PharmacyDB::RequestForm::справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
     return System::Void();
 }
 

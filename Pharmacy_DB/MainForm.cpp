@@ -2,6 +2,7 @@
 #include "AdminInterface.h"
 #include "UserInterface.h"
 #include "Login.h"
+#include "RequestForm.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -17,7 +18,10 @@ int main(array<String^>^ args) {
 
 System::Void PharmacyDB::MainForm::выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	Application::Exit();
+	MessageBoxButtons buttons = MessageBoxButtons::YesNo;
+	if (MessageBox::Show("Вы точно хотите выйти из программы?", "Уведомление", buttons) == System::Windows::Forms::DialogResult::Yes) {
+		Application::Exit();
+	}
 	return System::Void();
 }
 
@@ -31,8 +35,8 @@ System::Void PharmacyDB::MainForm::btnAdmin_Click(System::Object^ sender, System
 
 System::Void PharmacyDB::MainForm::btnUser_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	UserInterface^ mainForm = gcnew UserInterface();//создание формы
+	RequestForm^ requestForm = gcnew  RequestForm();//создание формы
 	this->Hide();//скрытие текующей формы
-	mainForm->Show();//открытие главной формы
+	requestForm->Show();//открытие главной формы
 	return System::Void();
 }

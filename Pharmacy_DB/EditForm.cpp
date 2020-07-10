@@ -75,10 +75,13 @@ System::Void PharmacyDB::EditForm::EditForm_Shown(System::Object^ sender, System
 {
     std::string edit_fileName = "EditRecord.txt";
     std::string line;
+    
     std::ifstream in(edit_fileName); // окрываем файл для чтения
     if (in.is_open())
     {
         getline(in, line, ';');
+        int int_id = std::stoi(line);
+        line = std::to_string(int_id);
         EditForm::label_Id->Text = (Convert_string_to_String(line));
         getline(in, line, ';');
         EditForm::maskedTextBoxName->AppendText(Convert_string_to_String(line));
