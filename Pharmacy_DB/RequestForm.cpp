@@ -145,7 +145,8 @@ System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object
     
     char* char_gridCountry, * char_country; 
     char * char_gridDate, * char_date;
-   
+    int int_gridPrice, int_price;
+
     String^ GridName;
     String^ GridCountry;
     String^ GridDate;
@@ -179,13 +180,14 @@ System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object
         Convert_String_to_string(GridDate, gridDate);
         char_gridDate = Convert_String_to_char(GridDate);
         char_date = Convert_String_to_char(Date);
-        
         Convert_String_to_string(GridNumber1, gridNumber1);
         Convert_String_to_string(GridNumber2, gridNumber2);
         Convert_String_to_string(GridNumber3, gridNumber3);
         Convert_String_to_string(GridNumber4, gridNumber4);
         Convert_String_to_string(GridNumber5, gridNumber5);
         Convert_String_to_string(GridPrice, gridPrice);
+        int_gridPrice = std::stoi(gridPrice);
+        int_price = std::stoi(price);
 
         if(name != ""){
             if (gridName.find(name) == -1) row_is_true = false;
@@ -196,7 +198,18 @@ System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object
         if (date != "") {
             if (strcmp(char_gridDate, char_date) <= 0) row_is_true = false;
         }
-       
+        if (number != "") {
+            if (number != gridNumber1 && number != gridNumber2 && number != gridNumber3 && number != gridNumber4 && number != gridNumber5) row_is_true = false;
+        }
+
+        if (price != "") {
+            if (PriceLess){
+                if (int_gridPrice >= int_price) row_is_true = false;
+            }
+            else if (PriceMore) {
+                if (int_gridPrice <= int_price) row_is_true = false;
+            }
+        }
         if (!row_is_true) {
             dataGridViewRequest->Rows->Remove(dataGridViewRequest->Rows[row]);
             count_row--;
