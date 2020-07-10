@@ -57,8 +57,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::ToolStripMenuItem^ âûéòèÈçÏğîãğàììûToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ âåğíóòüñÿÍàçàäToolStripMenuItem;
 	public: System::Windows::Forms::DataGridView^ dataGridViewAdmin;
-	private: System::Windows::Forms::ToolStripMenuItem^ ğåäàêòèğîâàòüÄàííûåToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ äîáàâèòüÄàííûåToolStripMenuItem;
+
+
 	protected:
 
 	private:
@@ -78,8 +78,6 @@ namespace PharmacyDB {
 			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->âûéòèÈçÏğîãğàììûToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->äîáàâèòüÄàííûåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dataGridViewAdmin = (gcnew System::Windows::Forms::DataGridView());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
@@ -101,10 +99,7 @@ namespace PharmacyDB {
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->âûõîäToolStripMenuItem,
-					this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem, this->äîáàâèòüÄàííûåToolStripMenuItem
-			});
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1582, 28);
@@ -134,19 +129,6 @@ namespace PharmacyDB {
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(243, 26);
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Text = L"Âåğíóòüñÿ íàçàä";
 			this->âåğíóòüñÿÍàçàäToolStripMenuItem->Click += gcnew System::EventHandler(this, &AdminInterface::âåğíóòüñÿÍàçàäToolStripMenuItem_Click);
-			// 
-			// ğåäàêòèğîâàòüÄàííûåToolStripMenuItem
-			// 
-			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem->Name = L"ğåäàêòèğîâàòüÄàííûåToolStripMenuItem";
-			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem->Size = System::Drawing::Size(182, 24);
-			this->ğåäàêòèğîâàòüÄàííûåToolStripMenuItem->Text = L"Ğåäàêòèğîâàòü äàííûå";
-			// 
-			// äîáàâèòüÄàííûåToolStripMenuItem
-			// 
-			this->äîáàâèòüÄàííûåToolStripMenuItem->Name = L"äîáàâèòüÄàííûåToolStripMenuItem";
-			this->äîáàâèòüÄàííûåToolStripMenuItem->Size = System::Drawing::Size(147, 24);
-			this->äîáàâèòüÄàííûåToolStripMenuItem->Text = L"Äîáàâèòü äàííûå";
-			this->äîáàâèòüÄàííûåToolStripMenuItem->Click += gcnew System::EventHandler(this, &AdminInterface::äîáàâèòüÄàííûåToolStripMenuItem_Click);
 			// 
 			// dataGridViewAdmin
 			// 
