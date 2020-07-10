@@ -45,7 +45,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::ToolStripMenuItem^ вернутьсяНазадToolStripMenuItem;
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxPrice;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxNumber1;
+	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxNumber;
+
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxCountry;
 	private: System::Windows::Forms::Label^ label3;
@@ -79,7 +80,7 @@ namespace PharmacyDB {
 			this->вернутьсяНазадToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->maskedTextBoxPrice = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->maskedTextBoxNumber1 = (gcnew System::Windows::Forms::MaskedTextBox());
+			this->maskedTextBoxNumber = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->maskedTextBoxCountry = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -176,13 +177,13 @@ namespace PharmacyDB {
 			this->label5->TabIndex = 51;
 			this->label5->Text = L"Цена:";
 			// 
-			// maskedTextBoxNumber1
+			// maskedTextBoxNumber
 			// 
-			this->maskedTextBoxNumber1->Location = System::Drawing::Point(4, 146);
-			this->maskedTextBoxNumber1->Margin = System::Windows::Forms::Padding(2);
-			this->maskedTextBoxNumber1->Name = L"maskedTextBoxNumber1";
-			this->maskedTextBoxNumber1->Size = System::Drawing::Size(34, 20);
-			this->maskedTextBoxNumber1->TabIndex = 48;
+			this->maskedTextBoxNumber->Location = System::Drawing::Point(4, 146);
+			this->maskedTextBoxNumber->Margin = System::Windows::Forms::Padding(2);
+			this->maskedTextBoxNumber->Name = L"maskedTextBoxNumber";
+			this->maskedTextBoxNumber->Size = System::Drawing::Size(34, 20);
+			this->maskedTextBoxNumber->TabIndex = 48;
 			// 
 			// label4
 			// 
@@ -257,7 +258,7 @@ namespace PharmacyDB {
 			this->groupBox2->Controls->Add(this->radioButtonPriceLess);
 			this->groupBox2->Controls->Add(this->maskedTextBoxName);
 			this->groupBox2->Controls->Add(this->label5);
-			this->groupBox2->Controls->Add(this->maskedTextBoxNumber1);
+			this->groupBox2->Controls->Add(this->maskedTextBoxNumber);
 			this->groupBox2->Controls->Add(this->label2);
 			this->groupBox2->Controls->Add(this->maskedTextBoxPrice);
 			this->groupBox2->Controls->Add(this->label4);
@@ -303,6 +304,7 @@ namespace PharmacyDB {
 			// radioButtonPriceLess
 			// 
 			this->radioButtonPriceLess->AutoSize = true;
+			this->radioButtonPriceLess->Checked = true;
 			this->radioButtonPriceLess->Location = System::Drawing::Point(5, 213);
 			this->radioButtonPriceLess->Name = L"radioButtonPriceLess";
 			this->radioButtonPriceLess->Size = System::Drawing::Size(220, 17);
@@ -327,6 +329,7 @@ namespace PharmacyDB {
 			this->Name = L"RequestForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"RequestForm";
+			this->Load += gcnew System::EventHandler(this, &RequestForm::RequestForm_Load);
 			this->Shown += gcnew System::EventHandler(this, &RequestForm::RequestForm_Shown);
 			this->groupBox1->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewRequest))->EndInit();
@@ -343,5 +346,6 @@ namespace PharmacyDB {
 	private: void Show_meds(int _countData);//показывает данные в дата грид
 	private: System::Void RequestForm_Shown(System::Object^ sender, System::EventArgs^ e);
 private: System::Void buttonShowDataRequest_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void RequestForm_Load(System::Object^ sender, System::EventArgs^ e);
 };
 }

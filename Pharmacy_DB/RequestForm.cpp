@@ -80,9 +80,11 @@ void PharmacyDB::RequestForm::Show_meds(int _countData)
         dataGridViewRequest->RowCount = _countData + 1;
         dataGridViewRequest->ColumnCount = 10;
         std::string line;
+        //std::string data[10];
         std::ifstream in(fileName); // окрываем файл для чтения
-       //int count_row = 0;
-       //int cell_num = 0;
+       
+        
+
         if (in.is_open())
         {
             getline(in, line);
@@ -90,7 +92,16 @@ void PharmacyDB::RequestForm::Show_meds(int _countData)
                 for (int cell = 0; cell < 10; cell++) {
                     getline(in, line, ';');
                     dataGridViewRequest->Rows[row]->Cells[cell]->Value = Convert_string_to_String(line);
+                    //data[cell] = line;
                 }
+                /*
+                 if (1) {
+                    for (int cell = 0; cell < 10; cell++) {
+                        
+                    }
+                }*/
+               
+                    
             }
         }
         else
@@ -99,23 +110,112 @@ void PharmacyDB::RequestForm::Show_meds(int _countData)
     }
     return;
 }
-
 System::Void PharmacyDB::RequestForm::RequestForm_Shown(System::Object^ sender, System::EventArgs^ e)
 {
+    /*
     char fileName[] = "medicines.txt"; //основной файл
-
-
     int countData = get_count_data(fileName);//текущее кол-во лекарств
-
-   
     Header();
     //MessageBox::Show(Convert_string_to_String(std::to_string(countData)));
     Show_meds(countData);
+    */
+    
+    return System::Void();
+}
+System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object^ sender, System::EventArgs^ e)
+{
+    char fileName[] = "medicines.txt"; //основной файл
+    int count_row = get_count_data(fileName);
+    int countData = get_count_data(fileName);//текущее кол-во лекарств
+    Show_meds(countData);
+    std::string name, country, date, number, price;
+    String^ Name = RequestForm::maskedTextBoxName->Text->ToString();
+    String^ Country = RequestForm::maskedTextBoxCountry->Text->ToString();
+    String^ Date = RequestForm::maskedTextBoxDate->Text->ToString();
+    String^ Number = RequestForm::maskedTextBoxNumber->Text->ToString();
+    String^ Price = RequestForm::maskedTextBoxPrice->Text->ToString();
+    Convert_String_to_string(Name, name);
+    Convert_String_to_string(Country, country);
+    Convert_String_to_string(Date, date);
+    Convert_String_to_string(Number, number);
+    Convert_String_to_string(Price, price);
+    bool PriceLess = RequestForm::radioButtonPriceLess->Checked;
+    bool PriceMore = RequestForm::radioButtonPriceMore->Checked;
+    std::string gridName, gridCountry, gridDate, gridNumber1, gridNumber2, gridNumber3, gridNumber4, gridNumber5, gridPrice;
+    
+    char* char_gridCountry, * char_country; 
+    char * char_gridDate, * char_date;
+   
+    String^ GridName;
+    String^ GridCountry;
+    String^ GridDate;
+    String^ GridNumber1;
+    String^ GridNumber2;
+    String^ GridNumber3;
+    String^ GridNumber4;
+    String^ GridNumber5;
+    String^ GridPrice;
+    //MessageBox::Show("_" + Name + "_" + Country + "_" + Date + "_" + Number + "_" + Price + "_");
+    if (name == "" && country == "" && date == "    .  ." && number == "" && price == "") {
+        MessageBox::Show("Ни одного условия не задано, выведены все данные");
+        return System::Void();
+    }
+    bool row_is_true;
+    for (int row = 0; row < count_row; row++) {
+        row_is_true = true;
+        GridName = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[1]->Value);
+        GridCountry = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[2]->Value);
+        GridDate = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[3]->Value);
+        GridNumber1 = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[4]->Value);
+        GridNumber2 = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[5]->Value);
+        GridNumber3 = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[6]->Value);
+        GridNumber4 = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[7]->Value);
+        GridNumber5 = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[8]->Value);
+        GridPrice = Convert::ToString(dataGridViewRequest->Rows[row]->Cells[9]->Value);
+        Convert_String_to_string(GridName, gridName);
+        Convert_String_to_string(GridCountry, gridCountry);
+        char_gridCountry = Convert_String_to_char(GridCountry);
+        char_country = Convert_String_to_char(Country);
+        Convert_String_to_string(GridDate, gridDate);
+        char_gridDate = Convert_String_to_char(GridDate);
+        char_date = Convert_String_to_char(Date);
+        
+        Convert_String_to_string(GridNumber1, gridNumber1);
+        Convert_String_to_string(GridNumber2, gridNumber2);
+        Convert_String_to_string(GridNumber3, gridNumber3);
+        Convert_String_to_string(GridNumber4, gridNumber4);
+        Convert_String_to_string(GridNumber5, gridNumber5);
+        Convert_String_to_string(GridPrice, gridPrice);
+
+        if(name != ""){
+            if (gridName.find(name) == -1) row_is_true = false;
+        }
+        if (country != "") {
+            if (strcmp(char_gridCountry, char_country) != 0) row_is_true = false;
+        }
+        if (date != "") {
+            if (strcmp(char_gridDate, char_date) <= 0) row_is_true = false;
+        }
+       
+        if (!row_is_true) {
+            dataGridViewRequest->Rows->Remove(dataGridViewRequest->Rows[row]);
+            count_row--;
+            row--;
+        }
+    }
+    dataGridViewRequest->Refresh();
+    // dataGridViewRequest->Rows->Remove(dataGridViewRequest->Rows[1]);
+    // dataGridViewRequest->Refresh();
     return System::Void();
 }
 
-System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void PharmacyDB::RequestForm::RequestForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
+    char fileName[] = "medicines.txt"; //основной файл
+    int countData = get_count_data(fileName);//текущее кол-во лекарств
+    Header();
+    //MessageBox::Show(Convert_string_to_String(std::to_string(countData)));
+    Show_meds(countData);
     return System::Void();
 }
 
