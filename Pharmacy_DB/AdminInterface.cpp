@@ -115,26 +115,13 @@ void PharmacyDB::AdminInterface::Show_meds(int _countData)
             int cell_num = 0, count_row = 0;
 			if (in.is_open())
 			{
-				getline(in, line);
-				//MessageBox::Show(Convert_string_to_String(line), "ÊÎË_ÂÎ");
-				while (getline(in, line, ';'))
-				{
-					
-                    if (cell_num > 9) {
-                        cell_num = 0;
-                        count_row++;
+                getline(in, line);
+                for (int row = 0; row < _countData; row++) {
+                    for (int cell = 0; cell < 10; cell++) {
+                        getline(in, line, ';');
+                        dataGridViewAdmin->Rows[row]->Cells[cell]->Value = Convert_string_to_String(line);
                     }
-                    dataGridViewAdmin->Rows[count_row]->Cells[cell_num]->Value = Convert_string_to_String(line);
-                    /*	try {
-						std::cout << line << std::endl;
-						MessageBox::Show(Convert_string_to_String(line), "ÄÀÍÍÛÅ");
-					}
-					catch (int exception) {
-						in.close();
-					}*/
-					
-                    cell_num++;
-				}
+                }
 			}
 			else
 				MessageBox::Show("Ôàéë íå îòêðûëñÿ", "Îøèáêà");//Ôàéë íå îòêðûëñÿ 

@@ -81,18 +81,16 @@ void PharmacyDB::RequestForm::Show_meds(int _countData)
         dataGridViewRequest->ColumnCount = 10;
         std::string line;
         std::ifstream in(fileName); // окрываем файл для чтения
-        int cell_num = 0, count_row = 0;
+       //int count_row = 0;
+       //int cell_num = 0;
         if (in.is_open())
         {
             getline(in, line);
-            while (getline(in, line, ';'))
-            {
-                if (cell_num > 9) {
-                    cell_num = 0;
-                    count_row++;
+            for (int row = 0; row < _countData; row++) {
+                for (int cell = 0; cell < 10; cell++) {
+                    getline(in, line, ';');
+                    dataGridViewRequest->Rows[row]->Cells[cell]->Value = Convert_string_to_String(line);
                 }
-                dataGridViewRequest->Rows[count_row]->Cells[cell_num]->Value = Convert_string_to_String(line);
-                cell_num++;
             }
         }
         else
@@ -111,8 +109,13 @@ System::Void PharmacyDB::RequestForm::RequestForm_Shown(System::Object^ sender, 
 
    
     Header();
-    MessageBox::Show(Convert_string_to_String(std::to_string(countData)));
+    //MessageBox::Show(Convert_string_to_String(std::to_string(countData)));
     Show_meds(countData);
+    return System::Void();
+}
+
+System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object^ sender, System::EventArgs^ e)
+{
     return System::Void();
 }
 

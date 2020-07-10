@@ -54,6 +54,9 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::MaskedTextBox^ maskedTextBoxName;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
+	private: System::Windows::Forms::RadioButton^ radioButtonPriceMore;
+	private: System::Windows::Forms::RadioButton^ radioButtonPriceLess;
+	private: System::Windows::Forms::Button^ buttonShowDataRequest;
 
 	private:
 		/// <summary>
@@ -85,6 +88,9 @@ namespace PharmacyDB {
 			this->maskedTextBoxName = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->buttonShowDataRequest = (gcnew System::Windows::Forms::Button());
+			this->radioButtonPriceMore = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButtonPriceLess = (gcnew System::Windows::Forms::RadioButton());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridViewRequest))->BeginInit();
 			this->menuStrip1->SuspendLayout();
@@ -98,7 +104,7 @@ namespace PharmacyDB {
 			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox1->Size = System::Drawing::Size(916, 522);
+			this->groupBox1->Size = System::Drawing::Size(929, 522);
 			this->groupBox1->TabIndex = 3;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Данные";
@@ -116,7 +122,7 @@ namespace PharmacyDB {
 			this->dataGridViewRequest->RowHeadersWidth = 51;
 			this->dataGridViewRequest->RowTemplate->Height = 24;
 			this->dataGridViewRequest->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridViewRequest->Size = System::Drawing::Size(908, 498);
+			this->dataGridViewRequest->Size = System::Drawing::Size(921, 498);
 			this->dataGridViewRequest->TabIndex = 1;
 			// 
 			// menuStrip1
@@ -246,6 +252,9 @@ namespace PharmacyDB {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->buttonShowDataRequest);
+			this->groupBox2->Controls->Add(this->radioButtonPriceMore);
+			this->groupBox2->Controls->Add(this->radioButtonPriceLess);
 			this->groupBox2->Controls->Add(this->maskedTextBoxName);
 			this->groupBox2->Controls->Add(this->label5);
 			this->groupBox2->Controls->Add(this->maskedTextBoxNumber1);
@@ -256,14 +265,51 @@ namespace PharmacyDB {
 			this->groupBox2->Controls->Add(this->maskedTextBoxCountry);
 			this->groupBox2->Controls->Add(this->maskedTextBoxDate);
 			this->groupBox2->Controls->Add(this->label3);
-			this->groupBox2->Location = System::Drawing::Point(941, 28);
+			this->groupBox2->Location = System::Drawing::Point(950, 28);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox2->Size = System::Drawing::Size(236, 244);
+			this->groupBox2->Size = System::Drawing::Size(227, 345);
 			this->groupBox2->TabIndex = 52;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Условия поиска";
+			// 
+			// buttonShowDataRequest
+			// 
+			this->buttonShowDataRequest->BackColor = System::Drawing::SystemColors::Control;
+			this->buttonShowDataRequest->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
+			this->buttonShowDataRequest->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonShowDataRequest->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
+			this->buttonShowDataRequest->Location = System::Drawing::Point(70, 295);
+			this->buttonShowDataRequest->Margin = System::Windows::Forms::Padding(2);
+			this->buttonShowDataRequest->Name = L"buttonShowDataRequest";
+			this->buttonShowDataRequest->Size = System::Drawing::Size(140, 33);
+			this->buttonShowDataRequest->TabIndex = 54;
+			this->buttonShowDataRequest->Text = L"Показать данные";
+			this->buttonShowDataRequest->UseVisualStyleBackColor = false;
+			this->buttonShowDataRequest->Click += gcnew System::EventHandler(this, &RequestForm::buttonShowDataRequest_Click);
+			// 
+			// radioButtonPriceMore
+			// 
+			this->radioButtonPriceMore->AutoSize = true;
+			this->radioButtonPriceMore->Location = System::Drawing::Point(5, 236);
+			this->radioButtonPriceMore->Name = L"radioButtonPriceMore";
+			this->radioButtonPriceMore->Size = System::Drawing::Size(219, 17);
+			this->radioButtonPriceMore->TabIndex = 53;
+			this->radioButtonPriceMore->TabStop = true;
+			this->radioButtonPriceMore->Text = L"Показывать цену БОЛЬШЕ указанной";
+			this->radioButtonPriceMore->UseVisualStyleBackColor = true;
+			// 
+			// radioButtonPriceLess
+			// 
+			this->radioButtonPriceLess->AutoSize = true;
+			this->radioButtonPriceLess->Location = System::Drawing::Point(5, 213);
+			this->radioButtonPriceLess->Name = L"radioButtonPriceLess";
+			this->radioButtonPriceLess->Size = System::Drawing::Size(220, 17);
+			this->radioButtonPriceLess->TabIndex = 52;
+			this->radioButtonPriceLess->TabStop = true;
+			this->radioButtonPriceLess->Text = L"Показывать цену МЕНЬШЕ указанной";
+			this->radioButtonPriceLess->UseVisualStyleBackColor = true;
 			// 
 			// RequestForm
 			// 
@@ -296,5 +342,6 @@ namespace PharmacyDB {
 	private: void Header();//заголовок таблицы
 	private: void Show_meds(int _countData);//показывает данные в дата грид
 	private: System::Void RequestForm_Shown(System::Object^ sender, System::EventArgs^ e);
+private: System::Void buttonShowDataRequest_Click(System::Object^ sender, System::EventArgs^ e);
 };
 }
