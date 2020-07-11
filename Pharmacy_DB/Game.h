@@ -23,12 +23,12 @@ namespace PharmacyDB {
 		Game(void)
 		{
 			InitializeComponent();
-
+			//this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &PharmacyDB::Game::OnKeyDown);
 			//
 			//TODO: добавьте код конструктора
 			//
 		}
-
+	
 	protected:
 		/// <summary>
 		/// ќсвободить все используемые ресурсы.
@@ -45,7 +45,8 @@ namespace PharmacyDB {
 	private: System::Windows::Forms::ToolStripMenuItem^ выйти»зѕрограммыToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ в√лавноећенюToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ посмотреть—чЄтToolStripMenuItem;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBoxCube;
+
 
 	private:
 		/// <summary>
@@ -64,9 +65,9 @@ namespace PharmacyDB {
 			this->выйти»зѕрограммыToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->в√лавноећенюToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->посмотреть—чЄтToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBoxCube = (gcnew System::Windows::Forms::PictureBox());
 			this->menuStrip1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// menuStrip1
@@ -102,16 +103,16 @@ namespace PharmacyDB {
 			this->посмотреть—чЄтToolStripMenuItem->Text = L"ѕосмотреть счЄт";
 			this->посмотреть—чЄтToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::посмотреть—чЄтToolStripMenuItem_Click);
 			// 
-			// pictureBox1
+			// pictureBoxCube
 			// 
-			this->pictureBox1->BackColor = System::Drawing::Color::LimeGreen;
-			this->pictureBox1->Location = System::Drawing::Point(304, 223);
-			this->pictureBox1->MaximumSize = System::Drawing::Size(40, 40);
-			this->pictureBox1->MinimumSize = System::Drawing::Size(40, 40);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(40, 40);
-			this->pictureBox1->TabIndex = 1;
-			this->pictureBox1->TabStop = false;
+			this->pictureBoxCube->BackColor = System::Drawing::Color::LimeGreen;
+			this->pictureBoxCube->Location = System::Drawing::Point(304, 223);
+			this->pictureBoxCube->MaximumSize = System::Drawing::Size(40, 40);
+			this->pictureBoxCube->MinimumSize = System::Drawing::Size(40, 40);
+			this->pictureBoxCube->Name = L"pictureBoxCube";
+			this->pictureBoxCube->Size = System::Drawing::Size(40, 40);
+			this->pictureBoxCube->TabIndex = 1;
+			this->pictureBoxCube->TabStop = false;
 			// 
 			// Game
 			// 
@@ -119,14 +120,15 @@ namespace PharmacyDB {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(1105, 601);
-			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->pictureBoxCube);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Game";
 			this->Text = L"Game";
+			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::Game_KeyDown);
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -135,5 +137,7 @@ namespace PharmacyDB {
 	private: System::Void выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void в√лавноећенюToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void посмотреть—чЄтToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void Game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
 };
 }
