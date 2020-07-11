@@ -40,12 +40,13 @@ namespace PharmacyDB {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+
 	protected:
-	private: System::Windows::Forms::ToolStripMenuItem^ âûéòèÈçÏğîãğàììûToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ âÃëàâíîåÌåíşToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ïîñìîòğåòüÑ÷¸òToolStripMenuItem;
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBoxCube;
+
 
 
 	private:
@@ -61,56 +62,18 @@ namespace PharmacyDB {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->âÃëàâíîåÌåíşToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ïîñìîòğåòüÑ÷¸òToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->pictureBoxCube = (gcnew System::Windows::Forms::PictureBox());
-			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// menuStrip1
-			// 
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->âûéòèÈçÏğîãğàììûToolStripMenuItem,
-					this->âÃëàâíîåÌåíşToolStripMenuItem, this->ïîñìîòğåòüÑ÷¸òToolStripMenuItem
-			});
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1105, 24);
-			this->menuStrip1->TabIndex = 0;
-			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// âûéòèÈçÏğîãğàììûToolStripMenuItem
-			// 
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Name = L"âûéòèÈçÏğîãğàììûToolStripMenuItem";
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Size = System::Drawing::Size(138, 20);
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Text = L"Âûéòè èç ïğîãğàììû";
-			this->âûéòèÈçÏğîãğàììûToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::âûéòèÈçÏğîãğàììûToolStripMenuItem_Click);
-			// 
-			// âÃëàâíîåÌåíşToolStripMenuItem
-			// 
-			this->âÃëàâíîåÌåíşToolStripMenuItem->Name = L"âÃëàâíîåÌåíşToolStripMenuItem";
-			this->âÃëàâíîåÌåíşToolStripMenuItem->Size = System::Drawing::Size(108, 20);
-			this->âÃëàâíîåÌåíşToolStripMenuItem->Text = L"Â ãëàâíîå ìåíş";
-			this->âÃëàâíîåÌåíşToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::âÃëàâíîåÌåíşToolStripMenuItem_Click);
-			// 
-			// ïîñìîòğåòüÑ÷¸òToolStripMenuItem
-			// 
-			this->ïîñìîòğåòüÑ÷¸òToolStripMenuItem->Name = L"ïîñìîòğåòüÑ÷¸òToolStripMenuItem";
-			this->ïîñìîòğåòüÑ÷¸òToolStripMenuItem->Size = System::Drawing::Size(113, 20);
-			this->ïîñìîòğåòüÑ÷¸òToolStripMenuItem->Text = L"Ïîñìîòğåòü ñ÷¸ò";
-			this->ïîñìîòğåòüÑ÷¸òToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::ïîñìîòğåòüÑ÷¸òToolStripMenuItem_Click);
 			// 
 			// pictureBoxCube
 			// 
 			this->pictureBoxCube->BackColor = System::Drawing::Color::LimeGreen;
-			this->pictureBoxCube->Location = System::Drawing::Point(304, 223);
-			this->pictureBoxCube->MaximumSize = System::Drawing::Size(40, 40);
-			this->pictureBoxCube->MinimumSize = System::Drawing::Size(40, 40);
+			this->pictureBoxCube->Location = System::Drawing::Point(1, 1);
+			this->pictureBoxCube->MaximumSize = System::Drawing::Size(39, 39);
+			this->pictureBoxCube->MinimumSize = System::Drawing::Size(39, 39);
 			this->pictureBoxCube->Name = L"pictureBoxCube";
-			this->pictureBoxCube->Size = System::Drawing::Size(40, 40);
+			this->pictureBoxCube->Size = System::Drawing::Size(39, 39);
 			this->pictureBoxCube->TabIndex = 1;
 			this->pictureBoxCube->TabStop = false;
 			// 
@@ -121,23 +84,25 @@ namespace PharmacyDB {
 			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(1105, 601);
 			this->Controls->Add(this->pictureBoxCube);
-			this->Controls->Add(this->menuStrip1);
-			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Game";
 			this->Text = L"Game";
+			this->Shown += gcnew System::EventHandler(this, &Game::Game_Shown);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::Game_KeyDown);
-			this->menuStrip1->ResumeLayout(false);
-			this->menuStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->EndInit();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
+		private: int _width = 900;//øèğèíà êàğòû
+		private: int _height = 800;//âûñîòà êàğòû
+		private: int _sizeOfSides = 40;//ğàçìåğ êâàäğàòèêà
 	private: System::Void âûéòèÈçÏğîãğàììûToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void âÃëàâíîåÌåíşToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void ïîñìîòğåòüÑ÷¸òToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void Game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);
+private: System::Void Game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);//îáğàáîòêà êíîïîê
+
+	   private: System::Void _generateMap();
+private: System::Void Game_Shown(System::Object^ sender, System::EventArgs^ e);
 };
 }

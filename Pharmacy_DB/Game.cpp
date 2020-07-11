@@ -46,6 +46,35 @@ System::Void PharmacyDB::Game::Game_KeyDown(System::Object^ sender, System::Wind
 	return System::Void();
 }
 
+System::Void PharmacyDB::Game::_generateMap()
+{
+	for (int i = 0; i < _width / _sizeOfSides; i ++)
+	{
+		PictureBox^ pic = gcnew PictureBox();
+		pic->BackColor = BackColor.Black;
+		pic->Location = Point(0, _sizeOfSides * i);
+		pic->Size = Drawing::Size(_width - 100, 1);
+		this->Controls->Add(pic);
+	}
+	for (int i = 0; i <= _height / _sizeOfSides; i++)
+	{
+		PictureBox^ pic = gcnew PictureBox();
+		pic->BackColor = BackColor.Black;
+		pic->Location = Point(_sizeOfSides * i, 0);
+		pic->Size = Drawing::Size(1, _width);
+		this->Controls->Add(pic);
+	}
+	return System::Void();
+}
+
+System::Void PharmacyDB::Game::Game_Shown(System::Object^ sender, System::EventArgs^ e)
+{
+	this->Width = _width;
+	this->Height = _height;
+	_generateMap();
+	return System::Void();
+}
+
 
 
 
