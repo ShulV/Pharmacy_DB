@@ -3,6 +3,7 @@
 #include "UserInterface.h"
 #include "Login.h"
 #include "RequestForm.h"
+#include "Game.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -38,5 +39,13 @@ System::Void PharmacyDB::MainForm::btnUser_Click(System::Object^ sender, System:
 	RequestForm^ requestForm = gcnew  RequestForm();//создание формы
 	this->Hide();//скрытие текующей формы
 	requestForm->Show();//открытие главной формы
+	return System::Void();
+}
+
+System::Void PharmacyDB::MainForm::играToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+{
+	Game^ gameForm = gcnew Game();
+	this->Hide();
+	gameForm->Show();
 	return System::Void();
 }
