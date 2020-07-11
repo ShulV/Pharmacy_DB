@@ -186,8 +186,7 @@ System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object
         Convert_String_to_string(GridNumber4, gridNumber4);
         Convert_String_to_string(GridNumber5, gridNumber5);
         Convert_String_to_string(GridPrice, gridPrice);
-        int_gridPrice = std::stoi(gridPrice);
-        int_price = std::stoi(price);
+       
 
         if(name != ""){
             if (gridName.find(name) == -1) row_is_true = false;
@@ -203,6 +202,8 @@ System::Void PharmacyDB::RequestForm::buttonShowDataRequest_Click(System::Object
         }
 
         if (price != "") {
+            int_gridPrice = std::stoi(gridPrice);
+            int_price = std::stoi(price);
             if (PriceLess){
                 if (int_gridPrice >= int_price) row_is_true = false;
             }
