@@ -2,6 +2,7 @@
 #include "Functions.h"
 #include "MainForm.h"
 
+
 System::Void PharmacyDB::Game::выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	MessageBoxButtons buttons = MessageBoxButtons::YesNo;
@@ -32,16 +33,24 @@ System::Void PharmacyDB::Game::Game_KeyDown(System::Object^ sender, System::Wind
 	int right_arrow = 39;
 	int bottom_arrow = 40;
 	if (e->KeyValue == left_arrow) {
-		pictureBoxCube->Left = pictureBoxCube->Left - 40;
+		//pictureBoxCube->Left = pictureBoxCube->Left - 40;
+		dirX = -1; //движение влево
+		dirY = 0; 
 	}
 	if (e->KeyValue == right_arrow) {
-		pictureBoxCube->Left = pictureBoxCube->Left + 40;
+		//pictureBoxCube->Left = pictureBoxCube->Left + 40;
+		dirX = 1; //движение вправо
+		dirY = 0;
 	}
 	if (e->KeyValue == top_arrow) {
-		pictureBoxCube->Top = pictureBoxCube->Top - 40;
+		//pictureBoxCube->Top = pictureBoxCube->Top - 40;
+		dirY = -1; //движение вниз
+		dirX = 0;
 	}
 	if (e->KeyValue == bottom_arrow) {
-		pictureBoxCube->Top = pictureBoxCube->Top + 40;
+		//pictureBoxCube->Top = pictureBoxCube->Top + 40;
+		dirY = 1; //движение вверх
+		dirX = 0;
 	}
 	return System::Void();
 }
@@ -71,9 +80,24 @@ System::Void PharmacyDB::Game::Game_Shown(System::Object^ sender, System::EventA
 {
 	this->Width = _width;
 	this->Height = _height;
+	dirX = 1; //по умолчанию движение по ’ вправо есть
+	dirY = 0; //по умолчанию движение по Y нет
 	_generateMap();
+	this->timer->Tick += gcnew EventHandler(this, &PharmacyDB::Game::_update);
+	this->timer->Interval = 500;
+	this->timer->Start();
+
 	return System::Void();
 }
+
+
+
+System::Void PharmacyDB::Game::_update(System::Object^ sender, System::EventArgs^ e)
+{
+	pictureBoxCube->Location = Point(pictureBoxCube->Location.X + dirX * _sizeOfSides, pictureBoxCube->Location.Y + dirY * _sizeOfSides);
+	return System::Void();
+}
+
 
 
 

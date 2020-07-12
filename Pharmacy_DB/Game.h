@@ -46,6 +46,9 @@ namespace PharmacyDB {
 
 
 	private: System::Windows::Forms::PictureBox^ pictureBoxCube;
+	private: System::Windows::Forms::Timer^ timer;
+
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -53,7 +56,7 @@ namespace PharmacyDB {
 		/// <summary>
 		/// ќб€зательна€ переменна€ конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -62,7 +65,9 @@ namespace PharmacyDB {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->pictureBoxCube = (gcnew System::Windows::Forms::PictureBox());
+			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -93,16 +98,23 @@ namespace PharmacyDB {
 
 		}
 #pragma endregion
-		private: int _width = 900;//ширина карты
-		private: int _height = 800;//высота карты
-		private: int _sizeOfSides = 40;//размер квадратика
+	private: int _width = 900;//ширина карты
+	private: int _height = 800;//высота карты
+	private: int _sizeOfSides = 40;//размер квадратика
+	private: int dirX;//движение по ’
+	private: int dirY;//движение по Y
+	
 	private: System::Void выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void в√лавноећенюToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void посмотреть—чЄтToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 
-private: System::Void Game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);//обработка кнопок
+	private: System::Void Game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);//обработка кнопок
 
-	   private: System::Void _generateMap();
-private: System::Void Game_Shown(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void _generateMap();
+	private: System::Void Game_Shown(System::Object^ sender, System::EventArgs^ e);
+
+	private: System::Void _update(System::Object^ sender, System::EventArgs^ e);
+
+
 };
 }
