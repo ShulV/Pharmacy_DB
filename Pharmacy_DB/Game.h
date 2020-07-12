@@ -125,7 +125,7 @@ namespace PharmacyDB {
 
 	private: System::Void _eatFruit();//поведение при поедании фруктов
 	private: System::Void _MoveSnake();//движение всей структуры змеи
-
+	private: System::Void _eatItSelf();//поведение при поедании змейкой самой себя
 
 };
 }

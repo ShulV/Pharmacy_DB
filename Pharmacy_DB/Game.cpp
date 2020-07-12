@@ -32,22 +32,23 @@ System::Void PharmacyDB::Game::Game_KeyDown(System::Object^ sender, System::Wind
 	int top_arrow = 38;
 	int right_arrow = 39;
 	int bottom_arrow = 40;
-	if (e->KeyValue == left_arrow) {
+	//змейка, длина которой больше 1 кубика, не может делать поврот на 180 градусов
+	if (e->KeyValue == left_arrow && (dirX != 1 || score == 0)) {
 		//pictureBoxCube->Left = pictureBoxCube->Left - 40;
 		dirX = -1; //движение влево
 		dirY = 0; 
 	}
-	if (e->KeyValue == right_arrow) {
+	if (e->KeyValue == right_arrow && (dirX != -1 || score == 0)) {
 		//pictureBoxCube->Left = pictureBoxCube->Left + 40;
 		dirX = 1; //движение вправо
 		dirY = 0;
 	}
-	if (e->KeyValue == top_arrow) {
+	if (e->KeyValue == top_arrow && (dirY != 1 || score == 0)) {
 		//pictureBoxCube->Top = pictureBoxCube->Top - 40;
 		dirY = -1; //движение вниз
 		dirX = 0;
 	}
-	if (e->KeyValue == bottom_arrow) {
+	if (e->KeyValue == bottom_arrow && (dirY != -1 || score == 0)) {
 		//pictureBoxCube->Top = pictureBoxCube->Top + 40;
 		dirY = 1; //движение вверх
 		dirX = 0;
@@ -164,6 +165,21 @@ System::Void PharmacyDB::Game::_MoveSnake()
 		SnakePB[i]->Location = SnakePB[i-1]->Location;
 	}
 	SnakePB[0]->Location = Point(SnakePB[0]->Location.X + dirX * _sizeOfSides, SnakePB[0]->Location.Y + dirY * _sizeOfSides);
+	_eatItSelf();
+}
+
+System::Void PharmacyDB::Game::_eatItSelf()
+{
+	for (int _i = 1; _i < score; _i++) {
+		if (SnakePB[0]->Location == SnakePB[_i]->Location)
+		{
+			for (int _j = 1; _j <= score; _j++) {
+				this->Controls->Remove(SnakePB[_j]);
+			}
+			score = 0;
+			this->timer->Stop();
+		}
+	}
 	return System::Void();
 }
 
