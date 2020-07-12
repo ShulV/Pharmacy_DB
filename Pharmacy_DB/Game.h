@@ -45,8 +45,10 @@ namespace PharmacyDB {
 
 
 
-	private: System::Windows::Forms::PictureBox^ pictureBoxCube;
+
 	private: System::Windows::Forms::Timer^ timer;
+	private: System::Windows::Forms::Label^ labelScore;
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -66,21 +68,20 @@ namespace PharmacyDB {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			this->pictureBoxCube = (gcnew System::Windows::Forms::PictureBox());
 			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->BeginInit();
+			this->labelScore = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// pictureBoxCube
+			// labelScore
 			// 
-			this->pictureBoxCube->BackColor = System::Drawing::Color::LimeGreen;
-			this->pictureBoxCube->Location = System::Drawing::Point(1, 1);
-			this->pictureBoxCube->MaximumSize = System::Drawing::Size(39, 39);
-			this->pictureBoxCube->MinimumSize = System::Drawing::Size(39, 39);
-			this->pictureBoxCube->Name = L"pictureBoxCube";
-			this->pictureBoxCube->Size = System::Drawing::Size(39, 39);
-			this->pictureBoxCube->TabIndex = 1;
-			this->pictureBoxCube->TabStop = false;
+			this->labelScore->AutoSize = true;
+			this->labelScore->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelScore->Location = System::Drawing::Point(862, 7);
+			this->labelScore->Name = L"labelScore";
+			this->labelScore->Size = System::Drawing::Size(186, 33);
+			this->labelScore->TabIndex = 2;
+			this->labelScore->Text = L"Результат: 0";
 			// 
 			// Game
 			// 
@@ -88,13 +89,13 @@ namespace PharmacyDB {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(1105, 601);
-			this->Controls->Add(this->pictureBoxCube);
+			this->Controls->Add(this->labelScore);
 			this->Name = L"Game";
 			this->Text = L"Game";
 			this->Shown += gcnew System::EventHandler(this, &Game::Game_Shown);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::Game_KeyDown);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBoxCube))->EndInit();
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -106,6 +107,7 @@ namespace PharmacyDB {
 	private: int rI;//рандомная координата X
 	private: int rJ;//рандомная координата Y
 	private: int score = 0; //опыт
+	PictureBox^ fruit = gcnew PictureBox();//создаём фрукт
 	array <System::Windows::Forms::PictureBox^>^ SnakePB;
 	
 	

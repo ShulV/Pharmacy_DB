@@ -85,16 +85,16 @@ System::Void PharmacyDB::Game::Game_Shown(System::Object^ sender, System::EventA
 	_generateMap();
 	_generateFruit();
 	this->timer->Tick += gcnew EventHandler(this, &PharmacyDB::Game::_update);
-	this->timer->Interval = 500;
+	this->timer->Interval = 200;
 	this->timer->Start();
 
 
 	SnakePB = gcnew array <PictureBox^>(400);//определяем максимально возможное кол-во квадратиков (тела змейки)
 	SnakePB[0] = gcnew System::Windows::Forms::PictureBox();//создаём голову
-	
-	SnakePB[0]->Location = System::Drawing::Point(200, 200);
-	SnakePB[0]->Size = Drawing::Size(_sizeOfSides, _sizeOfSides);
-	SnakePB[0]->BackColor = BackColor.LimeGreen;
+	(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(SnakePB[0])->BeginInit());
+	SnakePB[0]->Location = System::Drawing::Point(201, 201);
+	SnakePB[0]->Size = Drawing::Size(_sizeOfSides-1, _sizeOfSides-1);
+	SnakePB[0]->BackColor = BackColor.Green;
 	this->Controls->Add(SnakePB[0]);
 	//for (int i = 0; i < 400; i++)
 	//{
@@ -114,15 +114,16 @@ System::Void PharmacyDB::Game::Game_Shown(System::Object^ sender, System::EventA
 System::Void PharmacyDB::Game::_update(System::Object^ sender, System::EventArgs^ e)
 {
 	//pictureBoxCube->Location = Point(pictureBoxCube->Location.X + dirX * _sizeOfSides, pictureBoxCube->Location.Y + dirY * _sizeOfSides);
+	_eatFruit();
 	_MoveSnake();
 	return System::Void();
 }
 
 System::Void PharmacyDB::Game::_generateFruit()
 {
-	PictureBox^ fruit = gcnew PictureBox();//создаём фрукт
+	
 	fruit->BackColor = BackColor.Yellow;
-	fruit->Size = Drawing::Size(_sizeOfSides, _sizeOfSides);
+	fruit->Size = Drawing::Size(_sizeOfSides - 1, _sizeOfSides - 1);
 	Random^ randomNumber = gcnew Random();
 
 	rI = randomNumber->Next(0, _height - _sizeOfSides);
@@ -131,7 +132,8 @@ System::Void PharmacyDB::Game::_generateFruit()
 	rJ = randomNumber->Next(0, _height - _sizeOfSides);
 	int tempJ = rJ % _sizeOfSides;
 	rJ -= tempJ;
-
+	rJ++;
+	rI++;
 	fruit->Location = Point(rI, rJ);
 	this->Controls->Add(fruit);
 	return System::Void();
@@ -139,14 +141,29 @@ System::Void PharmacyDB::Game::_generateFruit()
 
 System::Void PharmacyDB::Game::_eatFruit()
 {
+	if(SnakePB[0]->Location.X ==rI && SnakePB[0]->Location.Y == rJ){
+		labelScore->Text = "Результат: " + (++score);
+		//удлинняем змейку
+		SnakePB[score] = gcnew System::Windows::Forms::PictureBox();//создаём голову
+		(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(SnakePB[score])->BeginInit());
+		SnakePB[score]->Location = Point(SnakePB[score - 1]->Location.X + 40 * dirX, SnakePB[score - 1]->Location.Y - 40 * dirY);
+		SnakePB[score]->Size = Drawing::Size(_sizeOfSides-1, _sizeOfSides-1);
+		SnakePB[score]->BackColor = BackColor.LimeGreen;
+		this->Controls->Add(SnakePB[score]);
+		
+		_generateFruit();
+	}
+	
 	return System::Void();
 }
 
 System::Void PharmacyDB::Game::_MoveSnake()
 {
-	for (int i = score; i >= 0; i--) {
-		SnakePB[i]->Location = Point(SnakePB[i]->Location.X + dirX * _sizeOfSides, SnakePB[i]->Location.Y + dirY * _sizeOfSides);
+	for (int i = score; i >= 1; i--) {
+		//
+		SnakePB[i]->Location = SnakePB[i-1]->Location;
 	}
+	SnakePB[0]->Location = Point(SnakePB[0]->Location.X + dirX * _sizeOfSides, SnakePB[0]->Location.Y + dirY * _sizeOfSides);
 	return System::Void();
 }
 
