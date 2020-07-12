@@ -60,8 +60,8 @@ namespace PharmacyDB {
 			this->btnUser = (gcnew System::Windows::Forms::Button());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->èãðàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -75,7 +75,7 @@ namespace PharmacyDB {
 				static_cast<System::Byte>(0)));
 			this->btnAdmin->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->btnAdmin->Location = System::Drawing::Point(275, 261);
-			this->btnAdmin->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnAdmin->Margin = System::Windows::Forms::Padding(2);
 			this->btnAdmin->Name = L"btnAdmin";
 			this->btnAdmin->Size = System::Drawing::Size(200, 36);
 			this->btnAdmin->TabIndex = 1;
@@ -91,7 +91,7 @@ namespace PharmacyDB {
 			this->btnUser->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnUser->Location = System::Drawing::Point(275, 314);
-			this->btnUser->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btnUser->Margin = System::Windows::Forms::Padding(2);
 			this->btnUser->Name = L"btnUser";
 			this->btnUser->Size = System::Drawing::Size(200, 36);
 			this->btnUser->TabIndex = 2;
@@ -120,6 +120,13 @@ namespace PharmacyDB {
 			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
 			this->âûõîäToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::âûõîäToolStripMenuItem_Click);
 			// 
+			// èãðàToolStripMenuItem
+			// 
+			this->èãðàToolStripMenuItem->Name = L"èãðàToolStripMenuItem";
+			this->èãðàToolStripMenuItem->Size = System::Drawing::Size(46, 20);
+			this->èãðàToolStripMenuItem->Text = L"Èãðà";
+			this->èãðàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::èãðàToolStripMenuItem_Click);
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -133,13 +140,6 @@ namespace PharmacyDB {
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Âûáåðèòå ðåæèì:";
 			// 
-			// èãðàToolStripMenuItem
-			// 
-			this->èãðàToolStripMenuItem->Name = L"èãðàToolStripMenuItem";
-			this->èãðàToolStripMenuItem->Size = System::Drawing::Size(46, 20);
-			this->èãðàToolStripMenuItem->Text = L"Èãðà";
-			this->èãðàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MainForm::èãðàToolStripMenuItem_Click);
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -152,11 +152,11 @@ namespace PharmacyDB {
 			this->Controls->Add(this->btnAdmin);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"MainForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"MainForm";
+			this->Text = L"Ãëàâíîå ìåíþ";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);

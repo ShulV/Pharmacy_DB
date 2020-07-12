@@ -168,7 +168,7 @@ namespace PharmacyDB {
 			this->MinimumSize = System::Drawing::Size(1121, 900);
 			this->Name = L"Game";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Game";
+			this->Text = L"  Игра \"Snake\"";
 			this->Shown += gcnew System::EventHandler(this, &Game::Game_Shown);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::Game_KeyDown);
 			this->menuStrip1->ResumeLayout(false);

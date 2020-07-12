@@ -376,7 +376,7 @@ namespace PharmacyDB {
 			this->MinimumSize = System::Drawing::Size(396, 342);
 			this->Name = L"EditForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"EditForm";
+			this->Text = L"Окно редактирования";
 			this->Load += gcnew System::EventHandler(this, &EditForm::EditForm_Load);
 			this->Shown += gcnew System::EventHandler(this, &EditForm::EditForm_Shown);
 			this->menuStrip1->ResumeLayout(false);

@@ -332,7 +332,7 @@ namespace PharmacyDB {
 			this->MinimumSize = System::Drawing::Size(1204, 596);
 			this->Name = L"RequestForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"RequestForm";
+			this->Text = L"Режим: Пользователь";
 			this->Load += gcnew System::EventHandler(this, &RequestForm::RequestForm_Load);
 			this->Shown += gcnew System::EventHandler(this, &RequestForm::RequestForm_Shown);
 			this->groupBox1->ResumeLayout(false);

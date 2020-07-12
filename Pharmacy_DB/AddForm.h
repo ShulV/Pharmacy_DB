@@ -101,7 +101,7 @@ namespace PharmacyDB {
 			// maskedTextBoxName
 			// 
 			this->maskedTextBoxName->Location = System::Drawing::Point(21, 58);
-			this->maskedTextBoxName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxName->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxName->Name = L"maskedTextBoxName";
 			this->maskedTextBoxName->Size = System::Drawing::Size(151, 20);
 			this->maskedTextBoxName->TabIndex = 1;
@@ -120,7 +120,7 @@ namespace PharmacyDB {
 			// 
 			this->maskedTextBoxDate->BeepOnError = true;
 			this->maskedTextBoxDate->Location = System::Drawing::Point(21, 131);
-			this->maskedTextBoxDate->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxDate->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxDate->Mask = L"0000/00/00";
 			this->maskedTextBoxDate->Name = L"maskedTextBoxDate";
 			this->maskedTextBoxDate->Size = System::Drawing::Size(151, 20);
@@ -139,7 +139,7 @@ namespace PharmacyDB {
 			// maskedTextBoxCountry
 			// 
 			this->maskedTextBoxCountry->Location = System::Drawing::Point(21, 94);
-			this->maskedTextBoxCountry->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxCountry->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxCountry->Name = L"maskedTextBoxCountry";
 			this->maskedTextBoxCountry->Size = System::Drawing::Size(151, 20);
 			this->maskedTextBoxCountry->TabIndex = 5;
@@ -157,7 +157,7 @@ namespace PharmacyDB {
 			// maskedTextBoxNumber1
 			// 
 			this->maskedTextBoxNumber1->Location = System::Drawing::Point(35, 167);
-			this->maskedTextBoxNumber1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxNumber1->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxNumber1->Name = L"maskedTextBoxNumber1";
 			this->maskedTextBoxNumber1->Size = System::Drawing::Size(26, 20);
 			this->maskedTextBoxNumber1->TabIndex = 7;
@@ -176,7 +176,7 @@ namespace PharmacyDB {
 			// maskedTextBoxPrice
 			// 
 			this->maskedTextBoxPrice->Location = System::Drawing::Point(21, 204);
-			this->maskedTextBoxPrice->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxPrice->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxPrice->Name = L"maskedTextBoxPrice";
 			this->maskedTextBoxPrice->Size = System::Drawing::Size(151, 20);
 			this->maskedTextBoxPrice->TabIndex = 9;
@@ -218,7 +218,7 @@ namespace PharmacyDB {
 			// maskedTextBoxNumber2
 			// 
 			this->maskedTextBoxNumber2->Location = System::Drawing::Point(82, 167);
-			this->maskedTextBoxNumber2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxNumber2->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxNumber2->Name = L"maskedTextBoxNumber2";
 			this->maskedTextBoxNumber2->Size = System::Drawing::Size(26, 20);
 			this->maskedTextBoxNumber2->TabIndex = 14;
@@ -239,7 +239,7 @@ namespace PharmacyDB {
 			// maskedTextBoxNumber3
 			// 
 			this->maskedTextBoxNumber3->Location = System::Drawing::Point(128, 167);
-			this->maskedTextBoxNumber3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxNumber3->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxNumber3->Name = L"maskedTextBoxNumber3";
 			this->maskedTextBoxNumber3->Size = System::Drawing::Size(26, 20);
 			this->maskedTextBoxNumber3->TabIndex = 16;
@@ -260,7 +260,7 @@ namespace PharmacyDB {
 			// maskedTextBoxNumber4
 			// 
 			this->maskedTextBoxNumber4->Location = System::Drawing::Point(175, 167);
-			this->maskedTextBoxNumber4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxNumber4->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxNumber4->Name = L"maskedTextBoxNumber4";
 			this->maskedTextBoxNumber4->Size = System::Drawing::Size(26, 20);
 			this->maskedTextBoxNumber4->TabIndex = 18;
@@ -281,7 +281,7 @@ namespace PharmacyDB {
 			// maskedTextBoxNumber5
 			// 
 			this->maskedTextBoxNumber5->Location = System::Drawing::Point(221, 167);
-			this->maskedTextBoxNumber5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->maskedTextBoxNumber5->Margin = System::Windows::Forms::Padding(2);
 			this->maskedTextBoxNumber5->Name = L"maskedTextBoxNumber5";
 			this->maskedTextBoxNumber5->Size = System::Drawing::Size(26, 20);
 			this->maskedTextBoxNumber5->TabIndex = 20;
@@ -295,7 +295,7 @@ namespace PharmacyDB {
 			this->buttonAdd->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->buttonAdd->Location = System::Drawing::Point(237, 251);
-			this->buttonAdd->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->buttonAdd->Margin = System::Windows::Forms::Padding(2);
 			this->buttonAdd->Name = L"buttonAdd";
 			this->buttonAdd->Size = System::Drawing::Size(106, 26);
 			this->buttonAdd->TabIndex = 22;
@@ -349,9 +349,9 @@ namespace PharmacyDB {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"AddForm";
-			this->Text = L"AddForm";
+			this->Text = L"Окно добавления";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);

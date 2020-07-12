@@ -72,7 +72,8 @@ namespace PharmacyDB {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(282, 28);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(213, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -83,20 +84,20 @@ namespace PharmacyDB {
 					this->âåðíóòüñÿÍàçàäToolStripMenuItem
 			});
 			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
-			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(67, 24);
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(53, 20);
 			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
 			// 
 			// âûéòèÈçÏðîãðàììûToolStripMenuItem
 			// 
 			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Name = L"âûéòèÈçÏðîãðàììûToolStripMenuItem";
-			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Size = System::Drawing::Size(243, 26);
+			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Text = L"Âûéòè èç ïðîãðàììû";
 			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Click += gcnew System::EventHandler(this, &Login::âûéòèÈçÏðîãðàììûToolStripMenuItem_Click);
 			// 
 			// âåðíóòüñÿÍàçàäToolStripMenuItem
 			// 
 			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Name = L"âåðíóòüñÿÍàçàäToolStripMenuItem";
-			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(243, 26);
+			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Text = L"Âåðíóòüñÿ íàçàä";
 			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Click += gcnew System::EventHandler(this, &Login::âåðíóòüñÿÍàçàäToolStripMenuItem_Click);
 			// 
@@ -106,9 +107,10 @@ namespace PharmacyDB {
 			this->btnAdminEntry->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
 			this->btnAdminEntry->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnAdminEntry->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->btnAdminEntry->Location = System::Drawing::Point(101, 183);
+			this->btnAdminEntry->Location = System::Drawing::Point(76, 149);
+			this->btnAdminEntry->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btnAdminEntry->Name = L"btnAdminEntry";
-			this->btnAdminEntry->Size = System::Drawing::Size(75, 34);
+			this->btnAdminEntry->Size = System::Drawing::Size(56, 28);
 			this->btnAdminEntry->TabIndex = 2;
 			this->btnAdminEntry->Text = L"Âîéòè";
 			this->btnAdminEntry->UseVisualStyleBackColor = false;
@@ -116,39 +118,42 @@ namespace PharmacyDB {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(47, 118);
+			this->textBox1->Location = System::Drawing::Point(35, 96);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->PasswordChar = '*';
-			this->textBox1->Size = System::Drawing::Size(190, 22);
+			this->textBox1->Size = System::Drawing::Size(144, 20);
 			this->textBox1->TabIndex = 1;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Login::textBox1_TextChanged);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(44, 86);
+			this->label1->Location = System::Drawing::Point(33, 70);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(61, 17);
+			this->label1->Size = System::Drawing::Size(48, 13);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Ïàðîëü:";
 			// 
 			// Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SkyBlue;
-			this->ClientSize = System::Drawing::Size(282, 253);
+			this->ClientSize = System::Drawing::Size(213, 212);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->btnAdminEntry);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(300, 300);
-			this->MinimumSize = System::Drawing::Size(300, 300);
+			this->MaximumSize = System::Drawing::Size(229, 251);
+			this->MinimumSize = System::Drawing::Size(229, 251);
 			this->Name = L"Login";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Login";
+			this->Text = L"Àâòîðèçàöèÿ";
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);

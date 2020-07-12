@@ -286,7 +286,7 @@ namespace PharmacyDB {
 			this->MinimumSize = System::Drawing::Size(1204, 596);
 			this->Name = L"AdminInterface";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"AdminInterface";
+			this->Text = L"Режим: Администратор";
 			this->Load += gcnew System::EventHandler(this, &AdminInterface::AdminInterface_Load);
 			this->Shown += gcnew System::EventHandler(this, &AdminInterface::AdminInterface_Shown);
 			this->menuStrip1->ResumeLayout(false);
