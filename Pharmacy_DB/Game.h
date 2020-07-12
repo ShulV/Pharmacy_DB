@@ -164,7 +164,10 @@ namespace PharmacyDB {
 			this->Controls->Add(this->labelScore);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
+			this->MaximumSize = System::Drawing::Size(1121, 640);
+			this->MinimumSize = System::Drawing::Size(1121, 640);
 			this->Name = L"Game";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Game";
 			this->Shown += gcnew System::EventHandler(this, &Game::Game_Shown);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::Game_KeyDown);

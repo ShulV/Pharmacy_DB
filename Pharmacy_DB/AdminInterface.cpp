@@ -169,7 +169,7 @@ System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ se
     Header();
     Show_meds(countData = get_count_data(fileName));
     if (!file_is_empty(edit_fileName)) {
-        MessageBox::Show("file_is__not_empty", "Предупреждение");
+        //MessageBox::Show("file_is__not_empty", "Предупреждение");
         std::string line;
         std::ifstream in(edit_fileName); // окрываем файл для чтения
         if (in.is_open())
@@ -181,7 +181,7 @@ System::Void PharmacyDB::AdminInterface::AdminInterface_Shown(System::Object^ se
             {
                 cell++;
                 dataGridViewAdmin->Rows[atoi(row.c_str())]->Cells[cell]->Value = Convert_string_to_String(line);
-                MessageBox::Show(Convert_string_to_String(line)+" "+cell, "Предупреждение");
+                //MessageBox::Show(Convert_string_to_String(line)+" "+cell, "Предупреждение");
             }
         }
         Save_data_grid_in_file(fileName);
