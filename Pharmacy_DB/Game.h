@@ -48,6 +48,21 @@ namespace PharmacyDB {
 
 	private: System::Windows::Forms::Timer^ timer;
 	private: System::Windows::Forms::Label^ labelScore;
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::ToolStripMenuItem^ âûõîäToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ âÃëàâíîåÌåíşToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ îÈãğåToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ ğåêîğäûToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ èãğàòüToolStripMenuItem;
+
+
+
+
+
+
+
+
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -70,18 +85,75 @@ namespace PharmacyDB {
 			this->components = (gcnew System::ComponentModel::Container());
 			this->timer = (gcnew System::Windows::Forms::Timer(this->components));
 			this->labelScore = (gcnew System::Windows::Forms::Label());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->âûõîäToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->âÃëàâíîåÌåíşToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->îÈãğåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ğåêîğäûToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->èãğàòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// labelScore
 			// 
 			this->labelScore->AutoSize = true;
+			this->labelScore->BackColor = System::Drawing::Color::Transparent;
 			this->labelScore->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->labelScore->Location = System::Drawing::Point(862, 7);
+			this->labelScore->Location = System::Drawing::Point(875, 38);
 			this->labelScore->Name = L"labelScore";
 			this->labelScore->Size = System::Drawing::Size(186, 33);
 			this->labelScore->TabIndex = 2;
 			this->labelScore->Text = L"Ğåçóëüòàò: 0";
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(5) {
+				this->âûõîäToolStripMenuItem,
+					this->âÃëàâíîåÌåíşToolStripMenuItem, this->îÈãğåToolStripMenuItem, this->ğåêîğäûToolStripMenuItem, this->èãğàòüToolStripMenuItem
+			});
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Margin = System::Windows::Forms::Padding(40, 0, 0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(1105, 24);
+			this->menuStrip1->TabIndex = 3;
+			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// âûõîäToolStripMenuItem
+			// 
+			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(53, 20);
+			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
+			this->âûõîäToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::âûõîäToolStripMenuItem_Click);
+			// 
+			// âÃëàâíîåÌåíşToolStripMenuItem
+			// 
+			this->âÃëàâíîåÌåíşToolStripMenuItem->Name = L"âÃëàâíîåÌåíşToolStripMenuItem";
+			this->âÃëàâíîåÌåíşToolStripMenuItem->Size = System::Drawing::Size(108, 20);
+			this->âÃëàâíîåÌåíşToolStripMenuItem->Text = L"Â ãëàâíîå ìåíş";
+			this->âÃëàâíîåÌåíşToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::âÃëàâíîåÌåíşToolStripMenuItem_Click_1);
+			// 
+			// îÈãğåToolStripMenuItem
+			// 
+			this->îÈãğåToolStripMenuItem->Name = L"îÈãğåToolStripMenuItem";
+			this->îÈãğåToolStripMenuItem->Size = System::Drawing::Size(56, 20);
+			this->îÈãğåToolStripMenuItem->Text = L"Î èãğå";
+			this->îÈãğåToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::îÈãğåToolStripMenuItem_Click);
+			// 
+			// ğåêîğäûToolStripMenuItem
+			// 
+			this->ğåêîğäûToolStripMenuItem->Name = L"ğåêîğäûToolStripMenuItem";
+			this->ğåêîğäûToolStripMenuItem->Size = System::Drawing::Size(67, 20);
+			this->ğåêîğäûToolStripMenuItem->Text = L"Ğåêîğäû";
+			this->ğåêîğäûToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::ğåêîğäûToolStripMenuItem_Click);
+			// 
+			// èãğàòüToolStripMenuItem
+			// 
+			this->èãğàòüToolStripMenuItem->BackColor = System::Drawing::Color::LimeGreen;
+			this->èãğàòüToolStripMenuItem->Name = L"èãğàòüToolStripMenuItem";
+			this->èãğàòüToolStripMenuItem->Size = System::Drawing::Size(57, 20);
+			this->èãğàòüToolStripMenuItem->Text = L"Èãğàòü";
+			this->èãğàòüToolStripMenuItem->Click += gcnew System::EventHandler(this, &Game::èãğàòüToolStripMenuItem_Click);
 			// 
 			// Game
 			// 
@@ -90,10 +162,14 @@ namespace PharmacyDB {
 			this->BackColor = System::Drawing::Color::SkyBlue;
 			this->ClientSize = System::Drawing::Size(1105, 601);
 			this->Controls->Add(this->labelScore);
+			this->Controls->Add(this->menuStrip1);
+			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"Game";
 			this->Text = L"Game";
 			this->Shown += gcnew System::EventHandler(this, &Game::Game_Shown);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::Game_KeyDown);
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -102,6 +178,7 @@ namespace PharmacyDB {
 	private: int _width = 900;//øèğèíà êàğòû
 	private: int _height = 800;//âûñîòà êàğòû
 	private: int _sizeOfSides = 40;//ğàçìåğ êâàäğàòèêà
+	private: int shift = 40; //ñäâèã äëÿ òîãî, ÷òîáû âëåçëî ìåíş
 	private: int dirX;//äâèæåíèå ïî Õ
 	private: int dirY;//äâèæåíèå ïî Y
 	private: int rI;//ğàíäîìíàÿ êîîğäèíàòà X
@@ -126,6 +203,16 @@ namespace PharmacyDB {
 	private: System::Void _eatFruit();//ïîâåäåíèå ïğè ïîåäàíèè ôğóêòîâ
 	private: System::Void _MoveSnake();//äâèæåíèå âñåé ñòğóêòóğû çìåè
 	private: System::Void _eatItSelf();//ïîâåäåíèå ïğè ïîåäàíèè çìåéêîé ñàìîé ñåáÿ
+	private: System::Void _checkBorders();//ïîâåäåíèå ïğè âñòğå÷å ñ ãğàíèöåé
 
+private: System::Void âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void âÃëàâíîåÌåíşToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e);
+private: System::Void îÈãğåToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void ğåêîğäûToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void èãğàòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+
+private: System::Void saveScore(int score_);
+private: System::Void showScore();
 };
 }

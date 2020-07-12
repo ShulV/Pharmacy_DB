@@ -102,7 +102,8 @@ namespace PharmacyDB {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->âûõîäToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1582, 28);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(1188, 24);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -113,20 +114,20 @@ namespace PharmacyDB {
 					this->âåðíóòüñÿÍàçàäToolStripMenuItem
 			});
 			this->âûõîäToolStripMenuItem->Name = L"âûõîäToolStripMenuItem";
-			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(67, 24);
+			this->âûõîäToolStripMenuItem->Size = System::Drawing::Size(53, 20);
 			this->âûõîäToolStripMenuItem->Text = L"Âûõîä";
 			// 
 			// âûéòèÈçÏðîãðàììûToolStripMenuItem
 			// 
 			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Name = L"âûéòèÈçÏðîãðàììûToolStripMenuItem";
-			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Size = System::Drawing::Size(243, 26);
+			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Text = L"Âûéòè èç ïðîãðàììû";
 			this->âûéòèÈçÏðîãðàììûToolStripMenuItem->Click += gcnew System::EventHandler(this, &AdminInterface::âûéòèÈçÏðîãðàììûToolStripMenuItem_Click);
 			// 
 			// âåðíóòüñÿÍàçàäToolStripMenuItem
 			// 
 			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Name = L"âåðíóòüñÿÍàçàäToolStripMenuItem";
-			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(243, 26);
+			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Size = System::Drawing::Size(193, 22);
 			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Text = L"Âåðíóòüñÿ íàçàä";
 			this->âåðíóòüñÿÍàçàäToolStripMenuItem->Click += gcnew System::EventHandler(this, &AdminInterface::âåðíóòüñÿÍàçàäToolStripMenuItem_Click);
 			// 
@@ -136,21 +137,24 @@ namespace PharmacyDB {
 			this->dataGridViewAdmin->AllowUserToDeleteRows = false;
 			this->dataGridViewAdmin->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridViewAdmin->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridViewAdmin->Location = System::Drawing::Point(6, 21);
+			this->dataGridViewAdmin->Location = System::Drawing::Point(4, 17);
+			this->dataGridViewAdmin->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridViewAdmin->Name = L"dataGridViewAdmin";
 			this->dataGridViewAdmin->ReadOnly = true;
 			this->dataGridViewAdmin->RowHeadersWidth = 51;
 			this->dataGridViewAdmin->RowTemplate->Height = 24;
 			this->dataGridViewAdmin->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridViewAdmin->Size = System::Drawing::Size(1308, 613);
+			this->dataGridViewAdmin->Size = System::Drawing::Size(981, 498);
 			this->dataGridViewAdmin->TabIndex = 1;
 			// 
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->dataGridViewAdmin);
-			this->groupBox1->Location = System::Drawing::Point(12, 31);
+			this->groupBox1->Location = System::Drawing::Point(9, 25);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(1320, 642);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Size = System::Drawing::Size(990, 522);
 			this->groupBox1->TabIndex = 2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Äàííûå";
@@ -160,9 +164,11 @@ namespace PharmacyDB {
 			this->groupBox2->Controls->Add(this->groupBox3);
 			this->groupBox2->Controls->Add(this->label1);
 			this->groupBox2->Controls->Add(this->buttonAddLine);
-			this->groupBox2->Location = System::Drawing::Point(1338, 31);
+			this->groupBox2->Location = System::Drawing::Point(1004, 25);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(232, 250);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox2->Size = System::Drawing::Size(174, 203);
 			this->groupBox2->TabIndex = 3;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Ðàáîòà ñ äàííûìè";
@@ -171,9 +177,11 @@ namespace PharmacyDB {
 			// 
 			this->groupBox3->Controls->Add(this->buttonDeleteLine);
 			this->groupBox3->Controls->Add(this->buttonEditLine);
-			this->groupBox3->Location = System::Drawing::Point(6, 108);
+			this->groupBox3->Location = System::Drawing::Point(4, 88);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(220, 136);
+			this->groupBox3->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox3->Size = System::Drawing::Size(165, 110);
 			this->groupBox3->TabIndex = 3;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"ðàáîòà ñ âûäåëåííîé çàïèñüþ";
@@ -184,9 +192,10 @@ namespace PharmacyDB {
 			this->buttonDeleteLine->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
 			this->buttonDeleteLine->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonDeleteLine->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->buttonDeleteLine->Location = System::Drawing::Point(15, 89);
+			this->buttonDeleteLine->Location = System::Drawing::Point(11, 72);
+			this->buttonDeleteLine->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonDeleteLine->Name = L"buttonDeleteLine";
-			this->buttonDeleteLine->Size = System::Drawing::Size(187, 41);
+			this->buttonDeleteLine->Size = System::Drawing::Size(140, 33);
 			this->buttonDeleteLine->TabIndex = 2;
 			this->buttonDeleteLine->Text = L"óäàëèòü";
 			this->buttonDeleteLine->UseVisualStyleBackColor = false;
@@ -198,9 +207,10 @@ namespace PharmacyDB {
 			this->buttonEditLine->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
 			this->buttonEditLine->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonEditLine->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->buttonEditLine->Location = System::Drawing::Point(15, 44);
+			this->buttonEditLine->Location = System::Drawing::Point(11, 36);
+			this->buttonEditLine->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonEditLine->Name = L"buttonEditLine";
-			this->buttonEditLine->Size = System::Drawing::Size(187, 39);
+			this->buttonEditLine->Size = System::Drawing::Size(140, 32);
 			this->buttonEditLine->TabIndex = 1;
 			this->buttonEditLine->Text = L"ðåäàêòèðîâàòü";
 			this->buttonEditLine->UseVisualStyleBackColor = false;
@@ -209,9 +219,10 @@ namespace PharmacyDB {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(36, 78);
+			this->label1->Location = System::Drawing::Point(27, 63);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(0, 17);
+			this->label1->Size = System::Drawing::Size(0, 13);
 			this->label1->TabIndex = 2;
 			// 
 			// buttonAddLine
@@ -220,9 +231,10 @@ namespace PharmacyDB {
 			this->buttonAddLine->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
 			this->buttonAddLine->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonAddLine->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->buttonAddLine->Location = System::Drawing::Point(21, 40);
+			this->buttonAddLine->Location = System::Drawing::Point(16, 32);
+			this->buttonAddLine->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonAddLine->Name = L"buttonAddLine";
-			this->buttonAddLine->Size = System::Drawing::Size(187, 42);
+			this->buttonAddLine->Size = System::Drawing::Size(140, 34);
 			this->buttonAddLine->TabIndex = 0;
 			this->buttonAddLine->Text = L"äîáàâèòü çàïèñü";
 			this->buttonAddLine->UseVisualStyleBackColor = false;
@@ -231,9 +243,11 @@ namespace PharmacyDB {
 			// groupBox4
 			// 
 			this->groupBox4->Controls->Add(this->buttonDoRequest);
-			this->groupBox4->Location = System::Drawing::Point(1338, 554);
+			this->groupBox4->Location = System::Drawing::Point(1004, 450);
+			this->groupBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(232, 119);
+			this->groupBox4->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox4->Size = System::Drawing::Size(174, 97);
 			this->groupBox4->TabIndex = 4;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Ïîèñê äàííûõ ñ óñëîâèåì";
@@ -244,9 +258,10 @@ namespace PharmacyDB {
 			this->buttonDoRequest->FlatAppearance->MouseOverBackColor = System::Drawing::Color::PapayaWhip;
 			this->buttonDoRequest->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->buttonDoRequest->Font = (gcnew System::Drawing::Font(L"Tempus Sans ITC", 9));
-			this->buttonDoRequest->Location = System::Drawing::Point(21, 42);
+			this->buttonDoRequest->Location = System::Drawing::Point(16, 34);
+			this->buttonDoRequest->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->buttonDoRequest->Name = L"buttonDoRequest";
-			this->buttonDoRequest->Size = System::Drawing::Size(187, 41);
+			this->buttonDoRequest->Size = System::Drawing::Size(140, 33);
 			this->buttonDoRequest->TabIndex = 3;
 			this->buttonDoRequest->Text = L"Ñäåëàòü çàïðîñ";
 			this->buttonDoRequest->UseVisualStyleBackColor = false;
@@ -254,20 +269,21 @@ namespace PharmacyDB {
 			// 
 			// AdminInterface
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::SkyBlue;
-			this->ClientSize = System::Drawing::Size(1582, 677);
+			this->ClientSize = System::Drawing::Size(1188, 557);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->menuStrip1);
 			this->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->MaximizeBox = false;
-			this->MaximumSize = System::Drawing::Size(1600, 724);
-			this->MinimumSize = System::Drawing::Size(1600, 724);
+			this->MaximumSize = System::Drawing::Size(1204, 596);
+			this->MinimumSize = System::Drawing::Size(1204, 596);
 			this->Name = L"AdminInterface";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"AdminInterface";
