@@ -249,6 +249,7 @@ System::Void PharmacyDB::RequestForm::назадToolStripMenuItem_Click(System::Objec
 
 System::Void PharmacyDB::RequestForm::справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
+    MessageBox::Show("Вы можете найти лекарства, задав условия.\nИх может быть столько, сколько полей для них имеет программа.\nПоиск по названию осуществляется по поиску строки в строке.\nСтрана-производитель - по точному совпадению.\nДата - минимальная дата производства лекарства.\nНомер аптеки - по точному совпадению в одном из пяти полей.\nЦена регулируется кнопками выбора.", "Справка");
     return System::Void();
 }
 
