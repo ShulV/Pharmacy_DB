@@ -78,14 +78,33 @@ System::Void PharmacyDB::Game::_generateMap()
 
 System::Void PharmacyDB::Game::Game_Shown(System::Object^ sender, System::EventArgs^ e)
 {
-	this->Width = _width;
+	this->Width = _width + 200;
 	this->Height = _height;
 	dirX = 1; //по умолчанию движение по Х вправо есть
 	dirY = 0; //по умолчанию движение по Y нет
 	_generateMap();
+	_generateFruit();
 	this->timer->Tick += gcnew EventHandler(this, &PharmacyDB::Game::_update);
 	this->timer->Interval = 500;
 	this->timer->Start();
+
+
+	SnakePB = gcnew array <PictureBox^>(400);//определяем максимально возможное кол-во квадратиков (тела змейки)
+	SnakePB[0] = gcnew System::Windows::Forms::PictureBox();//создаём голову
+	
+	SnakePB[0]->Location = System::Drawing::Point(200, 200);
+	SnakePB[0]->Size = Drawing::Size(_sizeOfSides, _sizeOfSides);
+	SnakePB[0]->BackColor = BackColor.LimeGreen;
+	this->Controls->Add(SnakePB[0]);
+	//for (int i = 0; i < 400; i++)
+	//{
+		//SnakePB[i] = gcnew System::Windows::Forms::PictureBox();
+		//(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(SnakePB[i])->BeginInit());
+		//SnakePB[i]->Location = System::Drawing::Point(40*i , 40);
+		//SnakePB[i]->BackColor = BackColor.LimeGreen;
+		//SnakePB[i]->Size = Drawing::Size(_sizeOfSides, _sizeOfSides);
+		//this->Controls->Add(SnakePB[i]);
+	//}
 
 	return System::Void();
 }
@@ -94,7 +113,40 @@ System::Void PharmacyDB::Game::Game_Shown(System::Object^ sender, System::EventA
 
 System::Void PharmacyDB::Game::_update(System::Object^ sender, System::EventArgs^ e)
 {
-	pictureBoxCube->Location = Point(pictureBoxCube->Location.X + dirX * _sizeOfSides, pictureBoxCube->Location.Y + dirY * _sizeOfSides);
+	//pictureBoxCube->Location = Point(pictureBoxCube->Location.X + dirX * _sizeOfSides, pictureBoxCube->Location.Y + dirY * _sizeOfSides);
+	_MoveSnake();
+	return System::Void();
+}
+
+System::Void PharmacyDB::Game::_generateFruit()
+{
+	PictureBox^ fruit = gcnew PictureBox();//создаём фрукт
+	fruit->BackColor = BackColor.Yellow;
+	fruit->Size = Drawing::Size(_sizeOfSides, _sizeOfSides);
+	Random^ randomNumber = gcnew Random();
+
+	rI = randomNumber->Next(0, _height - _sizeOfSides);
+	int tempI = rI % _sizeOfSides;
+	rI -= tempI;
+	rJ = randomNumber->Next(0, _height - _sizeOfSides);
+	int tempJ = rJ % _sizeOfSides;
+	rJ -= tempJ;
+
+	fruit->Location = Point(rI, rJ);
+	this->Controls->Add(fruit);
+	return System::Void();
+}
+
+System::Void PharmacyDB::Game::_eatFruit()
+{
+	return System::Void();
+}
+
+System::Void PharmacyDB::Game::_MoveSnake()
+{
+	for (int i = score; i >= 0; i--) {
+		SnakePB[i]->Location = Point(SnakePB[i]->Location.X + dirX * _sizeOfSides, SnakePB[i]->Location.Y + dirY * _sizeOfSides);
+	}
 	return System::Void();
 }
 

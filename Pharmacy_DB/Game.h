@@ -50,7 +50,7 @@ namespace PharmacyDB {
 
 	private: System::ComponentModel::IContainer^ components;
 
-
+	
 
 	private:
 		/// <summary>
@@ -103,6 +103,11 @@ namespace PharmacyDB {
 	private: int _sizeOfSides = 40;//размер квадратика
 	private: int dirX;//движение по ’
 	private: int dirY;//движение по Y
+	private: int rI;//рандомна€ координата X
+	private: int rJ;//рандомна€ координата Y
+	private: int score = 0; //опыт
+	array <System::Windows::Forms::PictureBox^>^ SnakePB;
+	
 	
 	private: System::Void выйти»зѕрограммыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	private: System::Void в√лавноећенюToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
@@ -110,10 +115,14 @@ namespace PharmacyDB {
 
 	private: System::Void Game_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e);//обработка кнопок
 
-	private: System::Void _generateMap();
+	private: System::Void _generateMap();//создание карты (сетки)
 	private: System::Void Game_Shown(System::Object^ sender, System::EventArgs^ e);
 
 	private: System::Void _update(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void _generateFruit();//генераци€ фрукта
+
+	private: System::Void _eatFruit();//поведение при поедании фруктов
+	private: System::Void _MoveSnake();//движение всей структуры змеи
 
 
 };
