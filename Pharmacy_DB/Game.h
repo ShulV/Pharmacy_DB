@@ -98,11 +98,11 @@ namespace PharmacyDB {
 			// 
 			this->labelScore->AutoSize = true;
 			this->labelScore->BackColor = System::Drawing::Color::Transparent;
-			this->labelScore->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->labelScore->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 21.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->labelScore->Location = System::Drawing::Point(875, 38);
 			this->labelScore->Name = L"labelScore";
-			this->labelScore->Size = System::Drawing::Size(186, 33);
+			this->labelScore->Size = System::Drawing::Size(161, 31);
 			this->labelScore->TabIndex = 2;
 			this->labelScore->Text = L"Результат: 0";
 			// 
@@ -160,12 +160,12 @@ namespace PharmacyDB {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SkyBlue;
-			this->ClientSize = System::Drawing::Size(1105, 601);
+			this->ClientSize = System::Drawing::Size(1105, 861);
 			this->Controls->Add(this->labelScore);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
-			this->MaximumSize = System::Drawing::Size(1121, 640);
-			this->MinimumSize = System::Drawing::Size(1121, 640);
+			this->MaximumSize = System::Drawing::Size(1121, 900);
+			this->MinimumSize = System::Drawing::Size(1121, 900);
 			this->Name = L"Game";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Game";
